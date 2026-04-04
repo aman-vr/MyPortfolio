@@ -1,20 +1,35 @@
-// Experience.jsx — Work history timeline. Reads: profile.experience
-
+import { motion } from "framer-motion";
 import profile from "../data/profile";
+
+const fadeUp = {
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.5 },
+};
 
 export default function Experience() {
   return (
     <section id="experience" className="py-24 px-6 border-t border-stone-800">
       <div className="max-w-5xl mx-auto">
-        <p className="text-amber-400 text-sm font-mono mb-2">02. Experience</p>
-        <h2 className="text-3xl font-bold text-white mb-10">
+        <motion.p {...fadeUp} className="text-amber-400 text-sm font-mono mb-2">
+          02. Experience
+        </motion.p>
+        <motion.h2 {...fadeUp} className="text-3xl font-bold text-white mb-10">
           Where I've Worked
-        </h2>
+        </motion.h2>
         <div className="relative">
           <div className="absolute left-0 top-0 bottom-0 w-px bg-stone-800 hidden md:block" />
           <div className="space-y-8">
             {profile.experience.map((job, index) => (
-              <div key={index} className="md:pl-8 relative">
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="md:pl-8 relative"
+              >
                 <div className="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-amber-400 -translate-x-0.5 hidden md:block" />
                 <div className="border border-stone-800 rounded-lg p-6 hover:border-stone-600 transition-colors duration-200">
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
@@ -53,7 +68,7 @@ export default function Experience() {
                     ))}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

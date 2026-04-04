@@ -1,24 +1,43 @@
+import { motion } from "framer-motion";
 import profile from "../data/profile";
+
+const fadeUp = {
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.5 },
+};
 
 export default function Contact() {
   return (
     <section id="contact" className="py-24 px-6 border-t border-stone-800">
       <div className="max-w-5xl mx-auto text-center">
-        <p className="text-amber-400 text-sm font-mono mb-2">05. Contact</p>
-        <h2 className="text-3xl font-bold text-white mb-4">Get In Touch</h2>
-        <p className="text-stone-400 max-w-lg mx-auto mb-10 leading-relaxed">
+        <motion.p {...fadeUp} className="text-amber-400 text-sm font-mono mb-2">
+          05. Contact
+        </motion.p>
+        <motion.h2 {...fadeUp} className="text-3xl font-bold text-white mb-4">
+          Get In Touch
+        </motion.h2>
+        <motion.p
+          {...fadeUp}
+          className="text-stone-400 max-w-lg mx-auto mb-10 leading-relaxed"
+        >
           Not actively looking, but always open to interesting problems,
           collaborations, or just a good conversation about software
           architecture.
-        </p>
-
-        <a
-          href={`mailto:${profile.social.email}`}
-          className="inline-block px-8 py-4 border border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-stone-950 rounded font-semibold transition-all duration-200 mb-12"
+        </motion.p>
+        <motion.div {...fadeUp}>
+          <a
+            href={`mailto:${profile.social.email}`}
+            className="inline-block px-8 py-4 border border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-stone-950 rounded font-semibold transition-all duration-200 mb-12"
+          >
+            Say Hello
+          </a>
+        </motion.div>
+        <motion.div
+          {...fadeUp}
+          className="flex items-center justify-center gap-8"
         >
-          Say Hello
-        </a>
-        <div className="flex items-center justify-center gap-8">
           <a
             href={profile.social.github}
             target="_blank"
@@ -43,7 +62,7 @@ export default function Contact() {
           >
             {profile.social.email}
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

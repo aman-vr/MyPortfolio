@@ -1,15 +1,28 @@
-// About.jsx — Bio, interests, certifications, tech stack. Reads: profile.bio.long, profile.interests, profile.certifications, profile.stack
-
+import { motion } from "framer-motion";
 import profile from "../data/profile";
+
+const fadeUp = {
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.5 },
+};
 
 export default function About() {
   return (
     <section id="about" className="py-24 px-6 border-t border-stone-800">
       <div className="max-w-5xl mx-auto">
-        <p className="text-amber-400 text-sm font-mono mb-2">01. About Me</p>
-        <h2 className="text-3xl font-bold text-white mb-10">Who I am</h2>
+        <motion.p {...fadeUp} className="text-amber-400 text-sm font-mono mb-2">
+          01. About Me
+        </motion.p>
+        <motion.h2 {...fadeUp} className="text-3xl font-bold text-white mb-10">
+          Who I am
+        </motion.h2>
         <div className="grid md:grid-cols-2 gap-12 mb-16">
-          <div className="space-y-4 text-stone-400 leading-relaxed">
+          <motion.div
+            {...fadeUp}
+            className="space-y-4 text-stone-400 leading-relaxed"
+          >
             <p>
               I'm a backend-focused full stack engineer based in Auckland with 6
               years of experience building production systems on{" "}
@@ -32,8 +45,8 @@ export default function About() {
               and how it applies to real-world backend systems. Not actively
               looking, but always open to interesting problems.
             </p>
-          </div>
-          <div className="space-y-6">
+          </motion.div>
+          <motion.div {...fadeUp} className="space-y-6">
             <div>
               <p className="text-white text-sm font-semibold mb-3">
                 What I'm growing into
@@ -70,9 +83,9 @@ export default function About() {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
-        <div>
+        <motion.div {...fadeUp}>
           <p className="text-white text-sm font-semibold mb-6">Tech Stack</p>
           <div className="space-y-4">
             {profile.stack.map((group) => (
@@ -96,7 +109,7 @@ export default function About() {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
