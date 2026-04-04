@@ -3,12 +3,12 @@ export default function About() {
   const interests = ["System Design", "Solution Architecture", "Agentic AI"];
 
   return (
-    <section id="about" className="py-24 px-6 border-t border-gray-800">
+    <section id="about" className="py-24 px-6 border-t border-stone-800">
       <div className="max-w-5xl mx-auto">
-        <p className="text-emerald-400 text-sm font-mono mb-2">01. About Me</p>
+        <p className="text-amber-400 text-sm font-mono mb-2">01. About Me</p>
         <h2 className="text-3xl font-bold text-white mb-10">Who I am</h2>
         <div className="grid md:grid-cols-2 gap-12">
-          <div className="space-y-4 text-gray-400 leading-relaxed">
+          <div className="space-y-4 text-stone-400 leading-relaxed">
             <p>
               I'm a backend-focused full stack engineer based in Auckland with 6
               years of experience building production systems on{" "}
@@ -36,7 +36,7 @@ export default function About() {
                 {strengths.map((s) => (
                   <span
                     key={s}
-                    className="text-xs px-3 py-1 border border-emerald-400/30 text-emerald-400 rounded-full"
+                    className="text-xs px-3 py-1 border border-amber-400/30 text-amber-400 rounded-full"
                   >
                     {s}
                   </span>
@@ -51,7 +51,7 @@ export default function About() {
                 {interests.map((i) => (
                   <span
                     key={i}
-                    className="text-xs px-3 py-1 border border-gray-600 text-gray-400 rounded-full"
+                    className="text-xs px-3 py-1 border border-stone-600 text-stone-400 rounded-full"
                   >
                     {i}
                   </span>
