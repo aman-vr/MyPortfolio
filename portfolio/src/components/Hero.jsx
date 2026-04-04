@@ -1,3 +1,5 @@
+import profile from "../data/profile";
+
 export default function Hero() {
   return (
     <section
@@ -9,17 +11,15 @@ export default function Hero() {
           Hi, my name is
         </p>
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 leading-tight">
-          Aman Verma<span className="text-amber-400">.</span>
+          {profile.name}
+          <span className="text-amber-400">.</span>
         </h1>
         <h2 className="text-3xl md:text-5xl font-bold text-stone-500 mb-8 leading-tight">
           I build backend systems
           <br className="hidden md:block" /> that scale.
         </h2>
         <p className="text-stone-400 text-lg max-w-xl mb-10 leading-relaxed">
-          Backend-focused full stack engineer specialising in{" "}
-          <span className="text-white">.NET and Azure</span>. I care about clean
-          architecture, API design, and systems that are built to last. Based in
-          Auckland, open to interesting problems.
+          {profile.bio.short}
         </p>
         <div className="flex flex-wrap gap-4">
           <a
@@ -35,7 +35,7 @@ export default function Hero() {
             About Me
           </a>
           <a
-            href="https://linkedin.com/in/aman-vr"
+            href={profile.social.linkedin}
             target="_blank"
             rel="noreferrer"
             className="px-6 py-3 border border-stone-700 text-stone-300 rounded hover:border-stone-400 hover:text-white transition-colors duration-200"

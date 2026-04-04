@@ -1,0 +1,61 @@
+import profile from "../data/profile";
+
+export default function Experience() {
+  return (
+    <section id="experience" className="py-24 px-6 border-t border-stone-800">
+      <div className="max-w-5xl mx-auto">
+        <p className="text-amber-400 text-sm font-mono mb-2">02. Experience</p>
+        <h2 className="text-3xl font-bold text-white mb-10">
+          Where I've Worked
+        </h2>
+        <div className="relative">
+          <div className="absolute left-0 top-0 bottom-0 w-px bg-stone-800 hidden md:block" />
+          <div className="space-y-8">
+            {profile.experience.map((job, index) => (
+              <div key={index} className="md:pl-8 relative">
+                <div className="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-amber-400 -translate-x-0.5 hidden md:block" />
+                <div className="border border-stone-800 rounded-lg p-6 hover:border-stone-600 transition-colors duration-200">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
+                    <div>
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <h3 className="text-white font-semibold">
+                          {job.title}
+                        </h3>
+                        {job.note && (
+                          <span className="text-xs px-2 py-0.5 bg-stone-800 text-stone-400 rounded-full">
+                            {job.note}
+                          </span>
+                        )}
+                        {job.current && (
+                          <span className="text-xs px-2 py-0.5 bg-amber-400/10 text-amber-400 rounded-full">
+                            Current
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-stone-400 text-sm mt-0.5">
+                        {job.company} · {job.location}
+                      </p>
+                    </div>
+                    <p className="text-stone-500 text-xs font-mono shrink-0">
+                      {job.period}
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {job.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-xs px-3 py-1 bg-stone-900 text-amber-400 rounded-full border border-stone-800"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

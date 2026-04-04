@@ -2,7 +2,7 @@ export default function Blog() {
   return (
     <section id="blog" className="py-24 px-6 border-t border-stone-800">
       <div className="max-w-5xl mx-auto">
-        <p className="text-amber-400 text-sm font-mono mb-2">03. Blog</p>
+        <p className="text-amber-400 text-sm font-mono mb-2">04. Blog</p>
         <h2 className="text-3xl font-bold text-white mb-4">
           Thoughts & Writing
         </h2>

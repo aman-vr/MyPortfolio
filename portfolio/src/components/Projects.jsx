@@ -1,34 +1,13 @@
-export default function Projects() {
-  const projects = [
-    {
-      title: "Streamly",
-      oneliner:
-        "Private cloud-based movie streaming platform with HLS adaptive streaming and token-based access control.",
-      description:
-        "Raw video files are never publicly exposed — an automated FFmpeg ingestion pipeline transcodes uploads into encrypted HLS segments, stored in private Azure Blob Storage and served via time-limited SAS URLs. Access is managed through magic links with SHA256-hashed tokens. Built with clean architecture across four layered .NET projects.",
-      tags: [
-        ".NET 8",
-        "React",
-        "Azure Blob",
-        "HLS",
-        "FFmpeg",
-        "EF Core",
-        "SQL Server",
-        "Clean Architecture",
-      ],
-      github: "https://github.com/aman-vr/streamly",
-      live: null,
-      featured: true,
-    },
-  ];
+import profile from "../data/profile";
 
+export default function Projects() {
   return (
     <section id="projects" className="py-24 px-6 border-t border-stone-800">
       <div className="max-w-5xl mx-auto">
-        <p className="text-amber-400 text-sm font-mono mb-2">02. Projects</p>
+        <p className="text-amber-400 text-sm font-mono mb-2">03. Projects</p>
         <h2 className="text-3xl font-bold text-white mb-10">What I've Built</h2>
         <div className="space-y-8">
-          {projects.map((project) => (
+          {profile.projects.map((project) => (
             <div
               key={project.title}
               className="border border-stone-800 rounded-lg p-8 hover:border-stone-600 transition-colors duration-200"

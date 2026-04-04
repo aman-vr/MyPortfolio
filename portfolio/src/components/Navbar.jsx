@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
+import profile from "../data/profile";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const links = ["About", "Projects", "Blog"];
+  const links = ["About", "Experience", "Projects", "Blog"];
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-stone-950/80 backdrop-blur-sm border-b border-stone-800">
@@ -24,7 +25,7 @@ export default function Navbar() {
           ))}
           <li>
             <a
-              href="https://github.com/aman-vr"
+              href={profile.social.github}
               target="_blank"
               rel="noreferrer"
               className="text-sm px-4 py-2 border border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-stone-950 rounded transition-all duration-200"
@@ -53,7 +54,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="https://github.com/aman-vr"
+            href={profile.social.github}
             target="_blank"
             rel="noreferrer"
             className="text-amber-400 text-sm"
