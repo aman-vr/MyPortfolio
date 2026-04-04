@@ -30,7 +30,7 @@ const profile = {
   social: {
     github: "https://github.com/aman-vr",
     linkedin: "https://linkedin.com/in/aman-vr",
-    email: "your@email.com",
+    email: "amanverma@outlook.co.nz",
   },
   certifications: [
     {

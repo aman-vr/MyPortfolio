@@ -6,7 +6,7 @@ import profile from "../data/profile";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const links = ["About", "Experience", "Projects", "Blog"];
+  const links = ["About", "Experience", "Projects", "Blog", "Contact"];
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-stone-950/80 backdrop-blur-sm border-b border-stone-800">
