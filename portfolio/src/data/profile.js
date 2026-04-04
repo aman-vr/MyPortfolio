@@ -1,3 +1,19 @@
+/**
+ * profile.js
+ *
+ * Single source of truth for all portfolio content.
+ * Update this file only — no component files need to be touched.
+ *
+ * Sections:
+ *  - Personal info and social links
+ *  - Bio (short for Hero, long paragraphs for About)
+ *  - Certifications
+ *  - Interests
+ *  - Tech stack (grouped by category)
+ *  - Experience (work history)
+ *  - Projects
+ */
+
 const profile = {
   name: "Aman Verma",
   role: "Full Stack Developer | .NET & Azure",

@@ -1,3 +1,5 @@
+// Blog.jsx — Writing section placeholder. No profile data.
+
 export default function Blog() {
   return (
     <section id="blog" className="py-24 px-6 border-t border-stone-800">

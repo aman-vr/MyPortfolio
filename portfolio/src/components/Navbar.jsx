@@ -1,3 +1,5 @@
+// Navbar.jsx — Fixed top nav with mobile menu. Reads: profile.social.github
+
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import profile from "../data/profile";

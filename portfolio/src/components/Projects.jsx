@@ -1,3 +1,5 @@
+// Projects.jsx — Featured project cards. Reads: profile.projects
+
 import profile from "../data/profile";
 
 export default function Projects() {

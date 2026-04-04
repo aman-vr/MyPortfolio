@@ -1,16 +1,67 @@
-# React + Vite
+# aman-vr.vercel.app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio website built with React and Tailwind CSS. Deployed on Vercel.
 
-Currently, two official plugins are available:
+Live: [aman-vr.vercel.app](https://aman-vr.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
 
-## React Compiler
+- [React](https://react.dev/) — UI framework
+- [Vite](https://vitejs.dev/) — build tool
+- [Tailwind CSS v4](https://tailwindcss.com/) — styling
+- [react-icons](https://react-icons.github.io/react-icons/) — icons
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Project Structure
 
-## Expanding the ESLint configuration
+```
+src/
+├── data/
+│   └── profile.js       # All personal content lives here
+├── components/
+│   ├── Navbar.jsx
+│   ├── Hero.jsx
+│   ├── About.jsx
+│   ├── Experience.jsx
+│   ├── Projects.jsx
+│   ├── Blog.jsx
+│   └── Footer.jsx
+├── App.jsx
+└── index.css
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Customising for Someone Else
+
+All personal content is centralised in `src/data/profile.js`. To use this as a template:
+
+1. Fork or clone the repo
+2. Update `src/data/profile.js` with new personal details
+3. Deploy to Vercel
+
+No component files need to be touched.
+
+## Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+## Deployment
+
+Deployed on [Vercel](https://vercel.com). Every push to `main` triggers an automatic deployment.
+
+## Sections
+
+| Section    | Description                                |
+| ---------- | ------------------------------------------ |
+| Hero       | Name, role, CTA buttons                    |
+| About      | Bio, interests, certifications, tech stack |
+| Experience | Work history timeline                      |
+| Projects   | Featured projects with tech tags           |
+| Blog       | Writing placeholder                        |

@@ -1,3 +1,5 @@
+// Footer.jsx — Bottom bar with social links. Reads: profile.name, profile.social
+
 import profile from "../data/profile";
 
 export default function Footer() {

@@ -1,3 +1,5 @@
+// Hero.jsx — Full-screen landing section. Reads: profile.name, profile.bio.short, profile.social
+
 import profile from "../data/profile";
 
 export default function Hero() {

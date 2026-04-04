@@ -1,3 +1,5 @@
+// About.jsx — Bio, interests, certifications, tech stack. Reads: profile.bio.long, profile.interests, profile.certifications, profile.stack
+
 import profile from "../data/profile";
 
 export default function About() {

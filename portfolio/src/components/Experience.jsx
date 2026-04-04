@@ -1,3 +1,5 @@
+// Experience.jsx — Work history timeline. Reads: profile.experience
+
 import profile from "../data/profile";
 
 export default function Experience() {
