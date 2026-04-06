@@ -51,7 +51,7 @@ export default function Experience() {
                         {job.company} · {job.location}
                       </p>
                     </div>
-                    <p className="text-stone-500 text-xs font-mono shrink-0">
+                    <p className="text-stone-500 text-sm font-mono shrink-0">
                       {job.period}
                     </p>
                   </div>

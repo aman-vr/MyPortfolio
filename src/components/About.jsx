@@ -46,7 +46,7 @@ export default function About() {
           </motion.div>
           <motion.div {...fadeUp} className="space-y-6">
             <div>
-              <p className="text-white text-sm font-semibold mb-3">
+              <p className="text-white text-base font-semibold mb-3">
                 What I'm growing into
               </p>
               <div className="flex flex-wrap gap-2">
@@ -61,7 +61,7 @@ export default function About() {
               </div>
             </div>
             <div>
-              <p className="text-white text-sm font-semibold mb-3">
+              <p className="text-white text-base font-semibold mb-3">
                 Certifications
               </p>
               {profile.certifications.map((cert) => (
@@ -71,10 +71,10 @@ export default function About() {
                 >
                   <div className="w-2 h-2 rounded-full bg-amber-400 mt-1.5 shrink-0" />
                   <div>
-                    <p className="text-white text-sm font-medium">
+                    <p className="text-white text-base font-medium">
                       {cert.name}
                     </p>
-                    <p className="text-stone-500 text-xs mt-1">
+                    <p className="text-stone-500 text-sm mt-1">
                       {cert.issuer} · Issued {cert.issued}
                     </p>
                   </div>
@@ -84,14 +84,14 @@ export default function About() {
           </motion.div>
         </div>
         <motion.div {...fadeUp}>
-          <p className="text-white text-sm font-semibold mb-6">Tech Stack</p>
+          <p className="text-white text-base font-semibold mb-6">Tech Stack</p>
           <div className="space-y-4">
             {profile.stack.map((group) => (
               <div
                 key={group.category}
                 className="flex flex-col sm:flex-row sm:items-start gap-3"
               >
-                <span className="text-stone-500 text-xs w-24 shrink-0 pt-1 font-mono">
+                <span className="text-stone-500 text-sm w-24 shrink-0 pt-1 font-mono">
                   {group.category}
                 </span>
                 <div className="flex flex-wrap gap-2">

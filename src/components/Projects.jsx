@@ -29,7 +29,7 @@ export default function Projects() {
               <div className="flex items-start justify-between mb-3">
                 <div>
                   {project.featured && (
-                    <p className="text-amber-400 text-xs font-mono mb-1">
+                    <p className="text-amber-400 text-sm font-mono mb-1">
                       Featured Project
                     </p>
                   )}
@@ -60,8 +60,8 @@ export default function Projects() {
                   )}
                 </div>
               </div>
-              <p className="text-stone-400 text-sm mb-3">{project.oneliner}</p>
-              <p className="text-stone-500 text-sm leading-relaxed mb-6">
+              <p className="text-stone-400 text-base mb-3">{project.oneliner}</p>
+              <p className="text-stone-500 text-base leading-relaxed mb-6">
                 {project.description}
               </p>
               <div className="flex flex-wrap gap-2">
