@@ -75,7 +75,7 @@ export default function Hero() {
                 href="#experience"
                 className="px-6 py-3 bg-amber-400 text-stone-950 font-semibold rounded hover:bg-amber-300 transition-colors duration-200"
               >
-                Work & Projects
+                See My Work
               </a>
               <a
                 href="#blog"

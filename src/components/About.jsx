@@ -27,7 +27,7 @@ export default function About() {
             </div>
             <div>
               <p className="text-xs font-semibold tracking-widest uppercase text-stone-500 mb-3">
-                What I'm growing into
+                Currently Exploring
               </p>
               <div className="flex flex-wrap gap-2">
                 {profile.interests.map((i) => (

@@ -26,28 +26,28 @@
 
 const profile = {
   name: "Aman Verma",
-  role: "Full Stack Developer | .NET & Azure",
+  role: "Software Engineer | .NET & Azure",
   photo: "/aman.jpg",
   logoText: "aman",
   resumeFile: "AmanVerma-CV.pdf",
-  pageTitle: "Aman Verma | Backend Engineer",
+  pageTitle: "Aman Verma | Software Engineer",
   metaDescription:
-    "Full Stack Developer with 5+ years of .NET and Azure expertise, based in Auckland, NZ. Building clean backend systems and APIs that scale.",
-  tagline: "I build backend systems\nthat scale.",
+    "Software Engineer with 5+ years of .NET and Azure expertise, based in Auckland, NZ. Building clean, scalable systems and APIs.",
+  tagline: "I love building systems\nthat scale.",
   blogBlurb:
-    "I write about backend architecture, .NET, Azure, and things I'm figuring out as I go.",
+    "Thoughts on software engineering, system design, AI, and the occasional thing I had to learn the hard way.",
   contactBlurb:
-    "Not actively looking, but always open to interesting problems, collaborations, or just a good conversation about software architecture.",
+    "Always open to interesting problems, good collaborations, or just a conversation about software — feel free to reach out.",
   bio: {
     short:
-      "Backend-focused full stack engineer with 5+ years building production systems on .NET and Azure. I care about clean architecture, thoughtful API design, and software that's built to last.",
+      "Microsoft Certified software engineer with 5+ years of experience. I build full stack systems with a focus on clean architecture and thoughtful design. I also bring a commercial mindset to engineering — shaped by dual master's degrees in both tech and business.",
     long: [
-      "I'm a backend-focused full stack engineer based in Auckland with 5+ years of experience building production systems on .NET and Azure. My primary focus is designing and delivering clean, scalable REST APIs and backend services that are built to last.",
-      "What sets me apart is a genuine interest in the business side of software. I hold dual master's degrees — one in Computer Applications, and one in Business Informatics — which gives me the ability to think about engineering problems through a commercial lens, not just a technical one.",
-      "Currently at Southern Cross Travel Insurance building full stack systems, while independently exploring how Agentic AI intersects with backend architecture. I'm particularly interested in where autonomous systems meet practical, production-grade engineering.",
+      "Most of my work has been designing and shipping REST APIs and cloud services on .NET and Azure — focused on systems where cutting corners early costs multiples later. Clean architecture, honest contracts, thorough documentation, and code the next developer can actually pick up and run with.",
+      "I hold dual master's degrees — Computer Applications and Business Informatics — meaning I can sit in a commercial conversation and translate it directly into engineering decisions. What it costs, what it enables, whether it's solving the right problem.",
+      "Outside of work, I'm exploring Agentic AI and how it's reshaping full stack development. The industry doesn't stand still, and neither do I.",
     ],
   },
-  location: "Auckland, New Zealand",
+  location: "Auckland, NZ",
   social: {
     github: "https://github.com/aman-vr",
     linkedin: "https://linkedin.com/in/aman-vr",
@@ -57,7 +57,7 @@ const profile = {
     {
       degree: "Master of Business Informatics",
       institution: "ICL Graduate Business School",
-      location: "Auckland, New Zealand",
+      location: "Auckland, NZ",
       year: "2024-2025",
     },
     {
@@ -83,7 +83,7 @@ const profile = {
     {
       name: "Microsoft Certified: Azure Fundamentals",
       issuer: "Microsoft",
-      issued: "March 2026",
+      issued: "Mar 2026",
       url: "https://learn.microsoft.com/api/credentials/share/en-us/AmanVerma-4593/5D38E0E1147A5AC4?sharingId=8CA11FB560EAA49E",
     },
   ],
@@ -100,7 +100,7 @@ const profile = {
       url: "https://www.taylorfrancis.com/books/edit/10.1201/9781003348313/sustainable-digital-technologies-vandana-sharma-balamurugan-balusamy-munish-sabharwal-mariya-ouaissa",
     },
   ],
-  interests: ["System Design", "Solution Architecture", "Agentic AI"],
+  interests: ["System Design", "Agentic AI"],
   stack: [
     {
       category: "Backend",
@@ -119,10 +119,10 @@ const profile = {
       category: "Database",
       skills: ["SQL Server", "Entity Framework Core", "Redis", "MySQL"],
     },
-    { category: "Frontend", skills: ["React", "JavaScript", "HTML", "CSS"] },
+    { category: "Frontend", skills: ["React", "JavaScript"] },
     {
       category: "Practices",
-      skills: ["Clean Architecture", "Domain-Driven Design", "xUnit", "OOP"],
+      skills: ["Clean Architecture", "Domain-Driven Design", "xUnit"],
     },
   ],
   experience: [
@@ -136,10 +136,10 @@ const profile = {
       current: true,
     },
     {
-      title: "Back End Engineer",
+      title: "Backend Engineer",
       company: "Digital Dreams Limited",
       period: "Apr 2023 – Present",
-      location: "Remote",
+      location: "Auckland, NZ",
       tags: ["ASP.NET Core", "REST APIs", "SQL Server"],
       note: "Freelance",
       current: true,
@@ -148,7 +148,7 @@ const profile = {
       title: "Full Stack Developer",
       company: "Ditstek Innovations",
       period: "Apr 2023 – Mar 2024",
-      location: "India",
+      location: "Chandigarh, India",
       tags: ["C#", ".NET Core", "EF Core", "React"],
       note: null,
       current: false,
@@ -157,7 +157,7 @@ const profile = {
       title: "API Developer",
       company: "ISOURSE Technologies",
       period: "Sep 2022 – Apr 2023",
-      location: "India",
+      location: "Delhi, India",
       tags: ["C#", "ASP.NET Web API", "SQL Server"],
       note: null,
       current: false,
@@ -167,7 +167,7 @@ const profile = {
     {
       title: "Streamly",
       oneliner:
-        "Private cloud-based movie streaming platform with HLS adaptive streaming and token-based access control.",
+        "Private cloud-based movie streaming platform with HLS streaming and token-based access control.",
       description:
         "Raw video files are never publicly exposed — an automated FFmpeg ingestion pipeline transcodes uploads into encrypted HLS segments, stored in private Azure Blob Storage and served via time-limited SAS URLs. Access is managed through magic links with SHA256-hashed tokens. Built with clean architecture across four layered .NET projects.",
       tags: [
@@ -189,7 +189,7 @@ const profile = {
       oneliner:
         "Multitenant immigration platform with dedicated apps for visa applicants and immigration advisors.",
       description:
-        "A multitenant platform serving multiple immigration firms from a single codebase via configuration — no separate deployments per client. Covers two distinct surfaces: an Enquiry App for applicants to submit and track visa cases, and an Advisor App for agents handling case management, invoicing, and team administration. Backed by Azure Service Bus for reliable email delivery with automatic retries, Redis for caching, and Application Insights for structured monitoring.",
+        "Serves multiple immigration firms from a single codebase via configuration — no separate deployments per client. Covers two distinct surfaces: an Enquiry App for applicants to submit and track visa cases, and an Advisor App for agents handling case management, invoicing, and team administration. Backed by Azure Service Bus for reliable email delivery with automatic retries, Redis for caching, and Application Insights for structured monitoring.",
       tags: [
         "ASP.NET Core",
         "C#",
@@ -203,7 +203,7 @@ const profile = {
       github: null,
       live: null,
       featured: false,
-      note: "Freelance · Digital Dreams",
+      note: "Digital Dreams",
     },
   ],
 };
