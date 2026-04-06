@@ -1,4 +1,5 @@
-// Navbar.jsx — Fixed top nav with mobile menu. Reads: profile.social.github
+// Navbar.jsx — Fixed top nav with mobile menu and resume button.
+// Reads: profile.social.github. Resume button auto-shows when /public/AmanVerma-CV.pdf exists.
 
 import { useState, useEffect } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
@@ -41,7 +42,7 @@ export default function Navbar() {
             <a
               href={profile.social.github}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="text-sm px-4 py-2 border border-stone-600 text-stone-400 hover:border-white hover:text-white rounded transition-all duration-200"
             >
               GitHub
@@ -81,7 +82,7 @@ export default function Navbar() {
           <a
             href={profile.social.github}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="text-stone-400 hover:text-white text-sm transition-colors duration-200"
           >
             GitHub

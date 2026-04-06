@@ -1,4 +1,4 @@
-// Footer.jsx — Bottom bar with social links. Reads: profile.name, profile.social
+// Footer.jsx — Bottom bar. Reads: profile.name
 
 import profile from "../data/profile";
 

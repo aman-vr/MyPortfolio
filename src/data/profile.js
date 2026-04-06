@@ -4,19 +4,29 @@
  * Single source of truth for all portfolio content.
  * Update this file only — no component files need to be touched.
  *
- * Sections:
- *  - Personal info and social links
- *  - Bio (short for Hero, long paragraphs for About)
- *  - Certifications
- *  - Interests
- *  - Tech stack (grouped by category)
- *  - Experience (work history)
- *  - Projects
+ * Fields:
+ *  - name, role, tagline, location         → Hero, meta tags
+ *  - contactBlurb                          → Contact section
+ *  - bio.short                             → Hero
+ *  - bio.long                              → About section
+ *  - social (github, linkedin, email)      → Navbar, Contact, Footer
+ *  - education                             → About section
+ *  - certifications (with url)             → Skills section (clickable if url set)
+ *  - publications (with url)               → Skills section (clickable if url set)
+ *  - interests                             → About section
+ *  - stack                                 → Skills section
+ *  - experience                            → Experience section
+ *  - projects (with note, github, live)    → Projects section
+ *
+ * Resume: drop /public/AmanVerma-CV.pdf to make the navbar Resume button appear.
  */
 
 const profile = {
   name: "Aman Verma",
   role: "Full Stack Developer | .NET & Azure",
+  tagline: "I build backend systems\nthat scale.",
+  contactBlurb:
+    "Not actively looking, but always open to interesting problems, collaborations, or just a good conversation about software architecture.",
   bio: {
     short:
       "Backend-focused full stack engineer specialising in .NET and Azure. I care about clean architecture, API design, and systems that are built to last. Based in Auckland, open to interesting problems.",

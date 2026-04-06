@@ -24,6 +24,7 @@ src/
 │   ├── Navbar.jsx
 │   ├── Hero.jsx
 │   ├── About.jsx
+│   ├── Skills.jsx
 │   ├── Experience.jsx
 │   ├── Projects.jsx
 │   ├── Blog.jsx
@@ -35,12 +36,12 @@ src/
 
 ## Customising for Someone Else
 
-Most personal content is centralised in `src/data/profile.js`. To use this as a template:
+All personal content is centralised in `src/data/profile.js`. To use this as a template:
 
 1. Fork or clone the repo
 2. Update `src/data/profile.js` with new personal details
-3. Update the tagline in `src/components/Hero.jsx` (hardcoded, not in `profile.js`)
-4. Set `VITE_APP_URL` in `.env` to your deployed URL (used for OG meta tags)
+3. Set `VITE_APP_URL` in `.env` to your deployed URL (used for OG meta tags)
+4. Drop your CV as `public/AmanVerma-CV.pdf` to enable the Resume button in the navbar
 5. Deploy to Vercel
 
 ## Getting Started
@@ -62,11 +63,12 @@ Deployed on [Vercel](https://vercel.com). Every push to `main` triggers an autom
 
 ## Sections
 
-| Section    | Description                                |
-| ---------- | ------------------------------------------ |
-| Hero       | Name, role, CTA buttons                    |
-| About      | Bio, interests, certifications, tech stack |
-| Experience | Work history timeline                      |
-| Projects   | Featured projects with tech tags           |
-| Blog       | Writing placeholder                        |
-| Contact    | Social links and contact options           |
+| Section           | Description                                          |
+| ----------------- | ---------------------------------------------------- |
+| Hero              | Name, tagline, bio, CTA buttons                      |
+| About             | Bio paragraphs, interests, education                 |
+| Skills            | Certifications, tech stack, publications             |
+| Experience        | Work history timeline                                |
+| Projects          | Featured projects with tech tags and links           |
+| Blog              | Writing placeholder                                  |
+| Contact           | Email CTA, social links                              |

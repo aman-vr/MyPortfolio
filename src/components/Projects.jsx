@@ -49,7 +49,7 @@ export default function Projects() {
                     <a
                       href={project.github}
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                       className="text-stone-400 hover:text-white text-sm transition-colors duration-200"
                     >
                       GitHub
@@ -59,7 +59,7 @@ export default function Projects() {
                     <a
                       href={project.live}
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                       className="text-stone-400 hover:text-white text-sm transition-colors duration-200"
                     >
                       Live

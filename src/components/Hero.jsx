@@ -33,8 +33,14 @@ export default function Hero() {
               {...fadeUp(0.3)}
               className="text-3xl md:text-4xl font-bold text-stone-500 mb-8 leading-tight"
             >
-              I build backend systems
-              <br className="hidden md:block" /> that scale.
+              {profile.tagline.split("\n").map((line, i) => (
+                <span key={i}>
+                  {line}
+                  {i < profile.tagline.split("\n").length - 1 && (
+                    <br className="hidden md:block" />
+                  )}
+                </span>
+              ))}
             </motion.h2>
             <motion.p
               {...fadeUp(0.4)}
@@ -64,7 +70,7 @@ export default function Hero() {
             <div className="relative w-64 h-64 md:w-72 md:h-72">
               <img
                 src="/aman.jpg"
-                alt={profile.name}
+                alt={`${profile.name}, ${profile.role}`}
                 className="absolute inset-0 w-full h-full object-cover rounded-lg z-10"
               />
               <div className="absolute rounded-lg border-2 border-amber-400/40 inset-0 translate-x-0 translate-y-0" />

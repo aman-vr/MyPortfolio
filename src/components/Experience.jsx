@@ -21,7 +21,7 @@ export default function Experience() {
           <div className="space-y-8">
             {profile.experience.map((job, index) => (
               <motion.div
-                key={index}
+                key={`${job.company}-${job.period}`}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

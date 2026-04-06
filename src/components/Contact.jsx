@@ -13,16 +13,14 @@ export default function Contact() {
     <section id="contact" className="py-24 px-6 border-t border-stone-800">
       <div className="max-w-5xl mx-auto text-center">
 
-        <motion.h2 {...fadeUp} className="text-3xl font-bold text-white mb-4">
+        <motion.h2 {...fadeUp} className="text-3xl font-bold text-white mb-10">
           Get In Touch
         </motion.h2>
         <motion.p
           {...fadeUp}
           className="text-stone-400 max-w-lg mx-auto mb-10 leading-relaxed"
         >
-          Not actively looking, but always open to interesting problems,
-          collaborations, or just a good conversation about software
-          architecture.
+          {profile.contactBlurb}
         </motion.p>
         <motion.div {...fadeUp}>
           <a
@@ -34,22 +32,21 @@ export default function Contact() {
         </motion.div>
         <motion.div
           {...fadeUp}
-          className="flex items-center justify-center gap-8"
+          className="flex items-center justify-center gap-4"
         >
           <a
             href={profile.social.github}
             target="_blank"
-            rel="noreferrer"
-            className="text-stone-500 hover:text-white text-base transition-colors duration-200"
+            rel="noopener noreferrer"
+            className="px-6 py-2 border border-stone-700 text-stone-400 hover:border-stone-400 hover:text-white text-sm rounded transition-all duration-200"
           >
             GitHub
           </a>
-          <span className="text-stone-800">·</span>
           <a
             href={profile.social.linkedin}
             target="_blank"
-            rel="noreferrer"
-            className="text-stone-500 hover:text-white text-base transition-colors duration-200"
+            rel="noopener noreferrer"
+            className="px-6 py-2 border border-stone-700 text-stone-400 hover:border-stone-400 hover:text-white text-sm rounded transition-all duration-200"
           >
             LinkedIn
           </a>

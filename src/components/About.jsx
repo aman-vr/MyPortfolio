@@ -19,28 +19,9 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12">
           <motion.div {...fadeUp} className="space-y-6">
             <div className="space-y-4 text-stone-400 leading-relaxed">
-              <p>
-                I'm a backend-focused full stack engineer based in Auckland with 6
-                years of experience building production systems on{" "}
-                <span className="text-white">.NET and Azure</span>. My primary
-                focus is designing and delivering clean, scalable REST APIs and
-                backend services that are built to last.
-              </p>
-              <p>
-                I naturally look beyond the code to understand the bigger picture
-                — shaping solutions that make sense in practice, not just in
-                theory. My background spans both{" "}
-                <span className="text-white">
-                  Computer Applications and Business Informatics
-                </span>
-                , which means I think about engineering problems with commercial
-                context in mind.
-              </p>
-              <p>
-                Currently exploring <span className="text-white">Agentic AI</span>{" "}
-                and how it applies to real-world backend systems. Not actively
-                looking, but always open to interesting problems.
-              </p>
+              {profile.bio.long.map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
             </div>
             <div>
               <p className="text-white text-base font-semibold mb-3">
