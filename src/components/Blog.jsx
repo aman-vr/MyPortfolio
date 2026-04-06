@@ -26,7 +26,7 @@ export default function Blog() {
         </motion.p>
         <motion.div
           {...fadeUp}
-          className="border border-dashed border-stone-800 rounded-lg p-12 text-center"
+          className="border border-dashed border-stone-800 rounded-lg p-8 sm:p-12 text-center"
         >
           <p className="text-stone-500 text-sm">First post coming soon</p>
         </motion.div>

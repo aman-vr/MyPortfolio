@@ -26,7 +26,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="border border-stone-800 rounded-lg p-8 hover:border-stone-600 transition-colors duration-200"
+              className="border border-stone-800 rounded-lg p-5 sm:p-8 hover:border-stone-600 transition-colors duration-200"
             >
               <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
                 <div>

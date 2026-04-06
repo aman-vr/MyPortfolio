@@ -19,7 +19,7 @@ export default function Hero() {
       className="min-h-screen flex items-center justify-center px-6"
     >
       <div className="max-w-5xl w-full mx-auto pt-20">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-12">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 md:gap-12">
           <div className="flex-1">
             <motion.p
               {...fadeUp(0.1)}
@@ -29,20 +29,23 @@ export default function Hero() {
             </motion.p>
             <motion.h1
               {...fadeUp(0.2)}
-              className="text-5xl md:text-7xl font-bold text-white mb-4 leading-tight"
+              className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-4 leading-tight"
             >
               {profile.name}
               <span className="text-amber-400">.</span>
             </motion.h1>
             <motion.h2
               {...fadeUp(0.3)}
-              className="text-3xl md:text-4xl font-bold text-stone-500 mb-8 leading-tight"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-stone-500 mb-8 leading-tight"
             >
               {taglineLines.map((line, i) => (
                 <span key={i}>
                   {line}
                   {i < taglineLines.length - 1 && (
-                    <br className="hidden md:block" />
+                    <>
+                      {" "}
+                      <br className="hidden md:block" />
+                    </>
                   )}
                 </span>
               ))}
@@ -70,7 +73,7 @@ export default function Hero() {
           </div>
           <motion.div
             {...fadeUp(0.6)}
-            className="flex justify-center md:justify-end shrink-0 pb-5 md:pr-5"
+            className="flex justify-center md:justify-end shrink-0 pb-5 md:pr-5 order-first md:order-none"
           >
             <div className="relative w-64 h-64 md:w-72 md:h-72">
               <img
