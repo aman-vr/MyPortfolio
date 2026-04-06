@@ -44,16 +44,16 @@ export default function Hero() {
             </motion.p>
             <motion.div {...fadeUp(0.5)} className="flex flex-wrap gap-4">
               <a
-                href="#projects"
+                href="#experience"
                 className="px-6 py-3 bg-amber-400 text-stone-950 font-semibold rounded hover:bg-amber-300 transition-colors duration-200"
               >
-                View My Work
+                Work & Projects
               </a>
               <a
-                href="#about"
+                href="#blog"
                 className="px-6 py-3 border border-stone-700 text-stone-300 rounded hover:border-stone-400 hover:text-white transition-colors duration-200"
               >
-                About Me
+                Read My Blog
               </a>
             </motion.div>
           </div>
