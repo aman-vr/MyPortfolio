@@ -19,13 +19,21 @@ export default function Navbar() {
       })
       .catch(() => setResumeAvailable(false));
   }, []);
-  const links = ["About", "Skills", "Experience", "Projects", "Blog", "Contact"];
+  const links = [
+    "About",
+    "Skills",
+    "Experience",
+    "Projects",
+    "Blog",
+    "Contact",
+  ];
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-stone-950/80 backdrop-blur-sm border-b border-stone-800">
       <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#hero" className="text-white font-bold text-xl tracking-tight">
-          {profile.logoText}<span className="text-amber-400">.</span>
+        <a href="" className="text-white font-bold text-xl tracking-tight">
+          {profile.logoText}
+          <span className="text-amber-400">.</span>
         </a>
         <ul className="hidden md:flex items-center gap-8">
           {links.map((link) => (

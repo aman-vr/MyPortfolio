@@ -12,25 +12,43 @@ export default function Skills() {
   return (
     <section id="skills" className="py-24 px-6 border-t border-stone-800">
       <div className="max-w-5xl mx-auto space-y-16">
-
         {/* Certifications */}
         <motion.div {...fadeUp}>
-          <h2 className="text-3xl font-bold text-white mb-10">Skills & Credentials</h2>
-          <p className="text-xs font-semibold tracking-widest uppercase text-stone-500 mb-6">Certifications</p>
+          <h2 className="text-3xl font-bold text-white mb-10">
+            Skills & Credentials
+          </h2>
+          <p className="text-xs font-semibold tracking-widest uppercase text-stone-500 mb-6">
+            Certifications
+          </p>
           <div className="grid sm:grid-cols-2 gap-4">
             {profile.certifications.map((cert) => {
               const inner = (
                 <>
                   <div className="w-2 h-2 rounded-full bg-amber-400 mt-1.5 shrink-0" />
                   <div className="flex-1">
-                    <p className="text-white text-sm font-semibold">{cert.name}</p>
+                    <p className="text-white text-sm font-semibold">
+                      {cert.name}
+                    </p>
                     <p className="text-stone-400 text-sm mt-1">
                       {cert.issuer} · Issued {cert.issued}
                     </p>
                   </div>
                   {cert.url && (
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-stone-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-label="Opens in new tab" role="img">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-4 h-4 text-stone-600 shrink-0 mt-0.5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                      aria-label="Opens in new tab"
+                      role="img"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
                     </svg>
                   )}
                 </>
@@ -60,7 +78,9 @@ export default function Skills() {
 
         {/* Tech Stack */}
         <motion.div {...fadeUp}>
-          <p className="text-xs font-semibold tracking-widest uppercase text-stone-500 mb-6">Tech Stack</p>
+          <p className="text-xs font-semibold tracking-widest uppercase text-stone-500 mb-6">
+            Tech Stack
+          </p>
           <div className="space-y-4">
             {profile.stack.map((group) => (
               <div
@@ -87,23 +107,42 @@ export default function Skills() {
 
         {/* Publications */}
         <motion.div {...fadeUp}>
-          <p className="text-xs font-semibold tracking-widest uppercase text-stone-500 mb-6">Publications</p>
+          <p className="text-xs font-semibold tracking-widest uppercase text-stone-500 mb-6">
+            Publications
+          </p>
           <div className="space-y-4">
             {profile.publications.map((pub) => {
               const inner = (
                 <>
                   <div className="w-2 h-2 rounded-full bg-amber-400 mt-1.5 shrink-0" />
                   <div className="flex-1">
-                    <p className="text-white text-sm font-semibold leading-snug">{pub.title}</p>
+                    <p className="text-white text-sm font-semibold leading-snug">
+                      {pub.title}
+                    </p>
                     <p className="text-stone-400 text-sm mt-1">{pub.book}</p>
                     <p className="text-stone-500 text-xs mt-1">
                       {pub.publisher} · {pub.date} · {pub.authors}
                     </p>
-                    <p className="text-stone-400 text-sm mt-2 leading-relaxed">{pub.summary}</p>
+                    <p className="text-stone-400 text-sm mt-2 leading-relaxed">
+                      {pub.summary}
+                    </p>
                   </div>
                   {pub.url && (
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-stone-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-label="Opens in new tab" role="img">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-4 h-4 text-stone-600 shrink-0 mt-0.5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                      aria-label="Opens in new tab"
+                      role="img"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
                     </svg>
                   )}
                 </>
@@ -130,7 +169,6 @@ export default function Skills() {
             })}
           </div>
         </motion.div>
-
       </div>
     </section>
   );

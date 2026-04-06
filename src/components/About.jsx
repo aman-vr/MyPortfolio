@@ -12,7 +12,6 @@ export default function About() {
   return (
     <section id="about" className="py-24 px-6 border-t border-stone-800">
       <div className="max-w-5xl mx-auto">
-
         <motion.h2 {...fadeUp} className="text-3xl font-bold text-white mb-10">
           Who I am
         </motion.h2>
@@ -41,7 +40,9 @@ export default function About() {
           </motion.div>
 
           <motion.div {...fadeUp} className="space-y-3">
-            <p className="text-xs font-semibold tracking-widest uppercase text-stone-500 mb-3">Education</p>
+            <p className="text-xs font-semibold tracking-widest uppercase text-stone-500 mb-3">
+              Education
+            </p>
             {profile.education.map((edu) => (
               <div
                 key={edu.degree}
@@ -52,7 +53,9 @@ export default function About() {
                   <p className="text-white text-sm font-semibold leading-snug">
                     {edu.degree}
                   </p>
-                  <p className="text-stone-400 text-sm mt-1">{edu.institution}</p>
+                  <p className="text-stone-400 text-sm mt-1">
+                    {edu.institution}
+                  </p>
                   <p className="text-stone-500 text-xs mt-0.5">
                     {edu.location} · {edu.year}
                   </p>
@@ -61,7 +64,6 @@ export default function About() {
             ))}
           </motion.div>
         </div>
-
       </div>
     </section>
   );

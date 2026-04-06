@@ -12,7 +12,6 @@ export default function Projects() {
   return (
     <section id="projects" className="py-24 px-6 border-t border-stone-800">
       <div className="max-w-5xl mx-auto">
-
         <motion.h2 {...fadeUp} className="text-3xl font-bold text-white mb-10">
           What I've Built
         </motion.h2>
@@ -67,7 +66,9 @@ export default function Projects() {
                   )}
                 </div>
               </div>
-              <p className="text-stone-400 text-base mb-3">{project.oneliner}</p>
+              <p className="text-stone-400 text-base mb-3">
+                {project.oneliner}
+              </p>
               <p className="text-stone-500 text-sm leading-relaxed mb-6">
                 {project.description}
               </p>

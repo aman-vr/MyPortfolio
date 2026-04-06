@@ -31,7 +31,7 @@ const profile = {
   resumeFile: "AmanVerma-CV.pdf",
   pageTitle: "Aman Verma | Backend Engineer",
   metaDescription:
-    "Backend-focused full stack engineer specialising in .NET and Azure. Based in Auckland.",
+    "Full Stack Developer with 5+ years of .NET and Azure expertise, based in Auckland, NZ. Building clean backend systems and APIs that scale.",
   tagline: "I build backend systems\nthat scale.",
   blogBlurb:
     "I write about backend architecture, .NET, Azure, and things I'm figuring out as I go.",
@@ -39,11 +39,11 @@ const profile = {
     "Not actively looking, but always open to interesting problems, collaborations, or just a good conversation about software architecture.",
   bio: {
     short:
-      "Backend-focused full stack engineer specialising in .NET and Azure. I care about clean architecture, API design, and systems that are built to last. Based in Auckland, open to interesting problems.",
+      "Backend-focused full stack engineer with 5+ years building production systems on .NET and Azure. I care about clean architecture, thoughtful API design, and software that's built to last.",
     long: [
-      "I'm a backend-focused full stack engineer based in Auckland with 6 years of experience building production systems on .NET and Azure. My primary focus is designing and delivering clean, scalable REST APIs and backend services that are built to last.",
-      "I naturally look beyond the code to understand the bigger picture — shaping solutions that make sense in practice, not just in theory. My background spans both Computer Applications and Business Informatics, which means I think about engineering problems with commercial context in mind.",
-      "Currently exploring Agentic AI and how it applies to real-world backend systems. Not actively looking, but always open to interesting problems.",
+      "I'm a backend-focused full stack engineer based in Auckland with 5+ years of experience building production systems on .NET and Azure. My primary focus is designing and delivering clean, scalable REST APIs and backend services that are built to last.",
+      "What sets me apart is a genuine interest in the business side of software. I hold dual master's degrees — one in Computer Applications, and one in Business Informatics — which gives me the ability to think about engineering problems through a commercial lens, not just a technical one.",
+      "Currently at Southern Cross Travel Insurance building full stack systems, while independently exploring how Agentic AI intersects with backend architecture. I'm particularly interested in where autonomous systems meet practical, production-grade engineering.",
     ],
   },
   location: "Auckland, New Zealand",

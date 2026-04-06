@@ -12,7 +12,6 @@ export default function Contact() {
   return (
     <section id="contact" className="py-24 px-6 border-t border-stone-800">
       <div className="max-w-5xl mx-auto text-center">
-
         <motion.h2 {...fadeUp} className="text-3xl font-bold text-white mb-10">
           Get In Touch
         </motion.h2>

@@ -12,7 +12,6 @@ export default function Experience() {
   return (
     <section id="experience" className="py-24 px-6 border-t border-stone-800">
       <div className="max-w-5xl mx-auto">
-
         <motion.h2 {...fadeUp} className="text-3xl font-bold text-white mb-10">
           Where I've Worked
         </motion.h2>
