@@ -33,13 +33,13 @@ src/
 
 ## Customising for Someone Else
 
-All personal content is centralised in `src/data/profile.js`. To use this as a template:
+Most personal content is centralised in `src/data/profile.js`. To use this as a template:
 
 1. Fork or clone the repo
 2. Update `src/data/profile.js` with new personal details
-3. Deploy to Vercel
-
-No component files need to be touched.
+3. Update the tagline in `src/components/Hero.jsx` (hardcoded, not in `profile.js`)
+4. Set `VITE_APP_URL` in `.env` to your deployed URL (used for OG meta tags)
+5. Deploy to Vercel
 
 ## Getting Started
 
