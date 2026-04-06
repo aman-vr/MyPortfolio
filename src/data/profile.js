@@ -57,11 +57,13 @@ const profile = {
       name: "Microsoft Certified: Azure Developer Associate",
       issuer: "Microsoft",
       issued: "Jan 2024",
+      url: "https://learn.microsoft.com/api/credentials/share/en-us/AmanVerma-0981/61380A6EBAA17264?sharingId",
     },
     {
       name: "Microsoft Certified: Azure Fundamentals",
       issuer: "Microsoft",
       issued: "March 2026",
+      url: "https://learn.microsoft.com/api/credentials/share/en-us/AmanVerma-4593/5D38E0E1147A5AC4?sharingId=8CA11FB560EAA49E",
     },
   ],
   interests: ["System Design", "Solution Architecture", "Agentic AI"],
