@@ -32,11 +32,36 @@ const profile = {
     linkedin: "https://linkedin.com/in/aman-vr",
     email: "amanverma@outlook.co.nz",
   },
+  education: [
+    {
+      degree: "Bachelor of Computer Applications",
+      institution: "Chitkara University",
+      location: "Rajpura, India",
+      year: "2018-2021",
+    },
+    {
+      degree: "Master of Computer Applications",
+      institution: "Vellore Institute of Technology",
+      location: "Vellore, India",
+      year: "2021-2023",
+    },
+    {
+      degree: "Master of Business Informatics",
+      institution: "ICL Graduate Business School",
+      location: "Auckland, New Zealand",
+      year: "2024-2025",
+    },
+  ],
   certifications: [
     {
       name: "Microsoft Certified: Azure Developer Associate",
       issuer: "Microsoft",
       issued: "Jan 2024",
+    },
+    {
+      name: "Microsoft Certified: Azure Fundamentals",
+      issuer: "Microsoft",
+      issued: "March 2026",
     },
   ],
   interests: ["System Design", "Solution Architecture", "Agentic AI"],

@@ -62,6 +62,29 @@ export default function About() {
             </div>
             <div>
               <p className="text-white text-base font-semibold mb-3">
+                Education
+              </p>
+              <div className="space-y-2">
+                {profile.education.map((edu) => (
+                  <div
+                    key={edu.degree}
+                    className="border border-stone-800 rounded-lg p-4 flex items-start gap-3"
+                  >
+                    <div className="w-2 h-2 rounded-full bg-amber-400 mt-1.5 shrink-0" />
+                    <div>
+                      <p className="text-white text-base font-medium">
+                        {edu.degree}
+                      </p>
+                      <p className="text-stone-500 text-sm mt-1">
+                        {edu.institution} · {edu.location} · {edu.year}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div>
+              <p className="text-white text-base font-semibold mb-3">
                 Certifications
               </p>
               {profile.certifications.map((cert) => (
