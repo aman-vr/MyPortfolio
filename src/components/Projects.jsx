@@ -26,7 +26,7 @@ export default function Projects() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="border border-stone-800 rounded-lg p-8 hover:border-stone-600 transition-colors duration-200"
             >
-              <div className="flex items-start justify-between mb-3">
+              <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
                 <div>
                   {project.featured && (
                     <p className="text-amber-400 text-sm font-mono mb-1">

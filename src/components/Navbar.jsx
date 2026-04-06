@@ -75,7 +75,7 @@ export default function Navbar() {
           <a
             href="/AmanVerma-CV.pdf"
             download
-            className="text-amber-400 text-sm"
+            className="text-amber-400 hover:text-amber-300 text-sm transition-colors duration-200"
           >
             Resume
           </a>

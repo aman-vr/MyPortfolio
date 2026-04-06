@@ -59,7 +59,7 @@ export default function Hero() {
           </div>
           <motion.div
             {...fadeUp(0.6)}
-            className="flex justify-center md:justify-end shrink-0 pb-5 pr-5"
+            className="flex justify-center md:justify-end shrink-0 pb-5 md:pr-5"
           >
             <div className="relative w-64 h-64 md:w-72 md:h-72">
               <img

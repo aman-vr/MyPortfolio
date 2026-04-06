@@ -40,7 +40,7 @@ export default function Contact() {
             href={profile.social.github}
             target="_blank"
             rel="noreferrer"
-            className="text-stone-500 hover:text-white text-sm transition-colors duration-200"
+            className="text-stone-500 hover:text-white text-base transition-colors duration-200"
           >
             GitHub
           </a>
@@ -49,7 +49,7 @@ export default function Contact() {
             href={profile.social.linkedin}
             target="_blank"
             rel="noreferrer"
-            className="text-stone-500 hover:text-white text-sm transition-colors duration-200"
+            className="text-stone-500 hover:text-white text-base transition-colors duration-200"
           >
             LinkedIn
           </a>
