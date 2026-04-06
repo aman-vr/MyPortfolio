@@ -33,9 +33,16 @@ export default function Projects() {
                       Featured Project
                     </p>
                   )}
-                  <h3 className="text-xl font-bold text-white">
-                    {project.title}
-                  </h3>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <h3 className="text-xl font-bold text-white">
+                      {project.title}
+                    </h3>
+                    {project.note && (
+                      <span className="text-xs px-2 py-0.5 bg-stone-800 text-stone-400 rounded-full">
+                        {project.note}
+                      </span>
+                    )}
+                  </div>
                 </div>
                 <div className="flex gap-4">
                   {project.github && (
@@ -76,12 +83,6 @@ export default function Projects() {
               </div>
             </motion.div>
           ))}
-          <motion.div
-            {...fadeUp}
-            className="border border-dashed border-stone-800 rounded-lg p-8 text-center"
-          >
-            <p className="text-stone-600 text-sm">More projects coming soon</p>
-          </motion.div>
         </div>
       </div>
     </section>

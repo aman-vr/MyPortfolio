@@ -34,10 +34,10 @@ const profile = {
   },
   education: [
     {
-      degree: "Bachelor of Computer Applications",
-      institution: "Chitkara University",
-      location: "Rajpura, India",
-      year: "2018-2021",
+      degree: "Master of Business Informatics",
+      institution: "ICL Graduate Business School",
+      location: "Auckland, New Zealand",
+      year: "2024-2025",
     },
     {
       degree: "Master of Computer Applications",
@@ -46,10 +46,10 @@ const profile = {
       year: "2021-2023",
     },
     {
-      degree: "Master of Business Informatics",
-      institution: "ICL Graduate Business School",
-      location: "Auckland, New Zealand",
-      year: "2024-2025",
+      degree: "Bachelor of Computer Applications",
+      institution: "Chitkara University",
+      location: "Rajpura, India",
+      year: "2018-2021",
     },
   ],
   certifications: [
@@ -149,6 +149,27 @@ const profile = {
       github: null,
       live: null,
       featured: true,
+    },
+    {
+      title: "Araavi",
+      oneliner:
+        "Multitenant immigration management platform with dedicated apps for visa applicants and advisors, built end-to-end on .NET and Azure.",
+      description:
+        "Led the full backend architecture and implementation of Araavi — a multitenant platform serving multiple immigration firms from a single codebase via configuration. Built two distinct apps: an Enquiry App for applicants to submit and track visa cases with real-time communication, and an Advisor App for immigration agents covering case management, team collaboration, invoice generation, and user administration. Architected with Unit of Work and Repository patterns for clean data access. Email delivery is handled through Azure Service Bus with automatic retries and delivery tracking. Redis caching reduces response times, and Application Insights provides structured logging for monitoring and debugging. APIs, database schema, and deployment processes are fully documented.",
+      tags: [
+        "ASP.NET Core",
+        "C#",
+        "Azure Service Bus",
+        "Application Insights",
+        "Redis",
+        "Multitenancy",
+        "EF Core",
+        "SQL Server",
+      ],
+      github: null,
+      live: null,
+      featured: false,
+      note: "Freelance · Digital Dreams",
     },
   ],
 };
