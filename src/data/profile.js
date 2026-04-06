@@ -72,10 +72,11 @@ const profile = {
       book: "Sustainable Digital Technologies: Trends, Impacts, and Assessments",
       publisher: "CRC Press",
       date: "Sep 2023",
-      authors: "Aman Verma, Samiksha Sharma, Kajal K., Siva Rama Krishnan Somayaji",
+      authors:
+        "Aman Verma, Samiksha Sharma, Kajal K., Siva Rama Krishnan Somayaji",
       summary:
         "A collaborative book chapter examining ocean pollution caused by industrialisation and environmental neglect. Surveys machine learning techniques to derive data-driven mitigation strategies, with an emphasis on public awareness and ecosystem sustainability.",
-      url: "",
+      url: "https://www.taylorfrancis.com/books/edit/10.1201/9781003348313/sustainable-digital-technologies-vandana-sharma-balamurugan-balusamy-munish-sabharwal-mariya-ouaissa",
     },
   ],
   interests: ["System Design", "Solution Architecture", "Agentic AI"],
