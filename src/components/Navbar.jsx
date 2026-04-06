@@ -15,7 +15,7 @@ export default function Navbar() {
       .then((res) => setResumeAvailable(res.ok))
       .catch(() => setResumeAvailable(false));
   }, []);
-  const links = ["About", "Experience", "Projects", "Blog", "Contact"];
+  const links = ["About", "Skills", "Experience", "Projects", "Blog", "Contact"];
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-stone-950/80 backdrop-blur-sm border-b border-stone-800">
