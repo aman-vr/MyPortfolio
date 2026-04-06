@@ -9,6 +9,7 @@ Live: [aman-vr.vercel.app](https://aman-vr.vercel.app)
 - [React](https://react.dev/) — UI framework
 - [Vite](https://vitejs.dev/) — build tool
 - [Tailwind CSS v4](https://tailwindcss.com/) — styling
+- [Framer Motion](https://www.framer.com/motion/) — animations
 - [react-icons](https://react-icons.github.io/react-icons/) — icons
 
 ## Project Structure
@@ -24,6 +25,7 @@ src/
 │   ├── Experience.jsx
 │   ├── Projects.jsx
 │   ├── Blog.jsx
+│   ├── Contact.jsx
 │   └── Footer.jsx
 ├── App.jsx
 └── index.css
@@ -65,3 +67,4 @@ Deployed on [Vercel](https://vercel.com). Every push to `main` triggers an autom
 | Experience | Work history timeline                      |
 | Projects   | Featured projects with tech tags           |
 | Blog       | Writing placeholder                        |
+| Contact    | Social links and contact options           |
