@@ -58,6 +58,33 @@ export default function Skills() {
           </div>
         </motion.div>
 
+        {/* Tech Stack */}
+        <motion.div {...fadeUp}>
+          <p className="text-white text-base font-semibold mb-6">Tech Stack</p>
+          <div className="space-y-4">
+            {profile.stack.map((group) => (
+              <div
+                key={group.category}
+                className="flex flex-col sm:flex-row sm:items-start gap-3"
+              >
+                <span className="text-stone-500 text-sm w-24 shrink-0 pt-1 font-mono">
+                  {group.category}
+                </span>
+                <div className="flex flex-wrap gap-2">
+                  {group.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="text-xs px-3 py-1 border border-amber-400/30 text-amber-400 rounded-full"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
         {/* Publications */}
         <motion.div {...fadeUp}>
           <p className="text-white text-base font-semibold mb-6">Publications</p>
@@ -101,33 +128,6 @@ export default function Skills() {
                 </div>
               );
             })}
-          </div>
-        </motion.div>
-
-        {/* Tech Stack */}
-        <motion.div {...fadeUp}>
-          <p className="text-white text-base font-semibold mb-6">Tech Stack</p>
-          <div className="space-y-4">
-            {profile.stack.map((group) => (
-              <div
-                key={group.category}
-                className="flex flex-col sm:flex-row sm:items-start gap-3"
-              >
-                <span className="text-stone-500 text-sm w-24 shrink-0 pt-1 font-mono">
-                  {group.category}
-                </span>
-                <div className="flex flex-wrap gap-2">
-                  {group.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="text-xs px-3 py-1 border border-amber-400/30 text-amber-400 rounded-full"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
           </div>
         </motion.div>
 

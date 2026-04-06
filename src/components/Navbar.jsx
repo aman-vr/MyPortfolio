@@ -12,7 +12,10 @@ export default function Navbar() {
 
   useEffect(() => {
     fetch(RESUME_PATH, { method: "HEAD" })
-      .then((res) => setResumeAvailable(res.ok))
+      .then((res) => {
+        const ct = res.headers.get("content-type") || "";
+        setResumeAvailable(res.ok && !ct.includes("text/html"));
+      })
       .catch(() => setResumeAvailable(false));
   }, []);
   const links = ["About", "Skills", "Experience", "Projects", "Blog", "Contact"];
