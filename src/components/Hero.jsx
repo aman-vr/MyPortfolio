@@ -50,9 +50,23 @@ export default function Hero() {
                 </span>
               ))}
             </motion.h2>
+            {/* Photo shown on mobile only, between tagline and bio */}
+            <motion.div
+              {...fadeUp(0.35)}
+              className="flex justify-center mb-8 md:hidden"
+            >
+              <div className="relative w-64 h-64">
+                <img
+                  src={profile.photo}
+                  alt={`${profile.name}, ${profile.role}`}
+                  className="absolute inset-0 w-full h-full object-cover rounded-lg z-10"
+                />
+                <div className="absolute rounded-lg border-2 border-amber-400/40 inset-0 translate-x-0 translate-y-0" />
+              </div>
+            </motion.div>
             <motion.p
               {...fadeUp(0.4)}
-              className="text-stone-400 text-lg max-w-xl mb-10 leading-relaxed"
+              className="text-stone-400 text-lg max-w-xl mb-10 leading-relaxed text-justify hyphens-auto"
             >
               {profile.bio.short}
             </motion.p>
@@ -71,11 +85,12 @@ export default function Hero() {
               </a>
             </motion.div>
           </div>
+          {/* Photo shown on desktop only, in side column */}
           <motion.div
             {...fadeUp(0.6)}
-            className="flex justify-center md:justify-end shrink-0 pb-5 md:pr-5 order-first md:order-none"
+            className="hidden md:flex justify-end shrink-0 pb-5 md:pr-5"
           >
-            <div className="relative w-64 h-64 md:w-72 md:h-72">
+            <div className="relative w-72 h-72">
               <img
                 src={profile.photo}
                 alt={`${profile.name}, ${profile.role}`}

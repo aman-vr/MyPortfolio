@@ -126,7 +126,7 @@ export default function Skills() {
                     <p className="text-stone-500 text-xs mt-1">
                       {pub.publisher} · {pub.date} · {pub.authors}
                     </p>
-                    <p className="text-stone-400 text-sm mt-2 leading-relaxed">
+                    <p className="text-stone-400 text-sm mt-2 leading-relaxed text-justify hyphens-auto">
                       {pub.summary}
                     </p>
                   </div>

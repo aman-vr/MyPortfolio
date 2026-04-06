@@ -22,7 +22,7 @@ export default function About() {
           <motion.div {...fadeUp} className="space-y-6">
             <div className="space-y-4 text-stone-400 leading-relaxed">
               {profile.bio.long.map((para, i) => (
-                <p key={i}>{para}</p>
+                <p key={i} className="text-justify hyphens-auto">{para}</p>
               ))}
             </div>
             <div>

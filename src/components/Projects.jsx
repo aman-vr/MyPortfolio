@@ -72,7 +72,7 @@ export default function Projects() {
               <p className="text-stone-400 text-base mb-3">
                 {project.oneliner}
               </p>
-              <p className="text-stone-500 text-sm leading-relaxed mb-6">
+              <p className="text-stone-500 text-sm leading-relaxed mb-6 text-justify hyphens-auto">
                 {project.description}
               </p>
               <div className="flex flex-wrap gap-2">

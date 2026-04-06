@@ -20,7 +20,7 @@ export default function Blog() {
         </motion.h2>
         <motion.p
           {...fadeUp}
-          className="text-stone-400 text-base leading-relaxed mb-10"
+          className="text-stone-400 text-base leading-relaxed mb-10 text-justify hyphens-auto"
         >
           {profile.blogBlurb}
         </motion.p>
