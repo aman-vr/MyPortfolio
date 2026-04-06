@@ -27,21 +27,21 @@ export default function Navbar() {
           ))}
           <li>
             <a
-              href="/AmanVerma-CV.pdf"
-              download
+              href={profile.social.github}
+              target="_blank"
+              rel="noreferrer"
               className="text-sm px-4 py-2 border border-stone-600 text-stone-400 hover:border-white hover:text-white rounded transition-all duration-200"
             >
-              Resume
+              GitHub
             </a>
           </li>
           <li>
             <a
-              href={profile.social.github}
-              target="_blank"
-              rel="noreferrer"
+              href="/AmanVerma-CV.pdf"
+              download
               className="text-sm px-4 py-2 border border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-stone-950 rounded transition-all duration-200"
             >
-              GitHub
+              Resume
             </a>
           </li>
         </ul>
@@ -68,14 +68,14 @@ export default function Navbar() {
             href={profile.social.github}
             target="_blank"
             rel="noreferrer"
-            className="text-amber-400 text-sm"
+            className="text-stone-400 hover:text-white text-sm transition-colors duration-200"
           >
             GitHub
           </a>
           <a
             href="/AmanVerma-CV.pdf"
             download
-            className="text-stone-400 hover:text-white text-sm transition-colors duration-200"
+            className="text-amber-400 text-sm"
           >
             Resume
           </a>

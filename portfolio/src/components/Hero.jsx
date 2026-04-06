@@ -55,21 +55,6 @@ export default function Hero() {
               >
                 About Me
               </a>
-              <a
-                href={profile.social.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="px-6 py-3 border border-stone-700 text-stone-300 rounded hover:border-stone-400 hover:text-white transition-colors duration-200"
-              >
-                LinkedIn
-              </a>
-              <a
-                href="/AmanVerma-CV.pdf"
-                download
-                className="px-6 py-3 border border-stone-700 text-stone-300 rounded hover:border-stone-400 hover:text-white transition-colors duration-200"
-              >
-                Download CV
-              </a>
             </motion.div>
           </div>
           <motion.div

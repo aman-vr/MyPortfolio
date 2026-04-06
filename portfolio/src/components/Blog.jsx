@@ -11,9 +11,7 @@ export default function Blog() {
   return (
     <section id="blog" className="py-24 px-6 border-t border-stone-800">
       <div className="max-w-5xl mx-auto">
-        <motion.p {...fadeUp} className="text-amber-400 text-sm font-mono mb-2">
-          04. Blog
-        </motion.p>
+
         <motion.h2 {...fadeUp} className="text-3xl font-bold text-white mb-4">
           Thoughts & Writing
         </motion.h2>

@@ -119,7 +119,7 @@ const profile = {
         "SQL Server",
         "Clean Architecture",
       ],
-      github: "https://github.com/yourusername/streamly",
+      github: null,
       live: null,
       featured: true,
     },

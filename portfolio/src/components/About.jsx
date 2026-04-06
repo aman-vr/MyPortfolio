@@ -12,9 +12,7 @@ export default function About() {
   return (
     <section id="about" className="py-24 px-6 border-t border-stone-800">
       <div className="max-w-5xl mx-auto">
-        <motion.p {...fadeUp} className="text-amber-400 text-sm font-mono mb-2">
-          01. About Me
-        </motion.p>
+
         <motion.h2 {...fadeUp} className="text-3xl font-bold text-white mb-10">
           Who I am
         </motion.h2>
