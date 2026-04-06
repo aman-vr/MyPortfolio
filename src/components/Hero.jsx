@@ -18,7 +18,7 @@ export default function Hero() {
       id="hero"
       className="min-h-screen flex items-center justify-center px-6"
     >
-      <div className="max-w-5xl w-full mx-auto pt-20">
+      <div className="max-w-5xl w-full mx-auto pt-20 pb-16">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 md:gap-12">
           <div className="flex-1">
             <motion.p

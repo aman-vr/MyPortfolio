@@ -21,9 +21,9 @@ export default function Navbar() {
   }, []);
   const links = [
     "About",
-    "Skills",
     "Experience",
     "Projects",
+    "Skills",
     "Blog",
     "Contact",
   ];
