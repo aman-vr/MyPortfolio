@@ -27,9 +27,9 @@
 const profile = {
   name: "Aman Verma",
   role: "Software Engineer | .NET & Azure",
-  photo: "/aman.jpg",
+  photo: "/portrait.jpg",
   logoText: "aman",
-  resumeFile: "AmanVerma-CV.pdf",
+  resumeFile: "resume.pdf",
   pageTitle: "Aman Verma | Software Engineer",
   metaDescription:
     "Software Engineer with 5+ years of .NET and Azure expertise, based in Auckland, NZ. Building clean, scalable systems and APIs.",
