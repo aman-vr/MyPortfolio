@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import profile from "../data/profile";
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -16,8 +17,7 @@ export default function Blog() {
           Thoughts & Writing
         </motion.h2>
         <motion.p {...fadeUp} className="text-stone-400 text-base leading-relaxed mb-10">
-          I write about backend architecture, .NET, Azure, and things I'm
-          figuring out as I go.
+          {profile.blogBlurb}
         </motion.p>
         <motion.div
           {...fadeUp}

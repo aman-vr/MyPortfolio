@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import profile from "../data/profile";
 
-const RESUME_PATH = "/AmanVerma-CV.pdf";
+const RESUME_PATH = `/${profile.resumeFile}`;
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,7 +25,7 @@ export default function Navbar() {
     <nav className="fixed top-0 w-full z-50 bg-stone-950/80 backdrop-blur-sm border-b border-stone-800">
       <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#hero" className="text-white font-bold text-xl tracking-tight">
-          aman<span className="text-amber-400">.</span>
+          {profile.logoText}<span className="text-amber-400">.</span>
         </a>
         <ul className="hidden md:flex items-center gap-8">
           {links.map((link) => (

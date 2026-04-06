@@ -18,13 +18,23 @@
  *  - experience                            → Experience section
  *  - projects (with note, github, live)    → Projects section
  *
- * Resume: drop /public/AmanVerma-CV.pdf to make the navbar Resume button appear.
+ * Resume: drop the file named resumeFile into /public/ to make the navbar Resume button appear.
+ * Meta: pageTitle and metaDescription are applied dynamically (browser tab, search engines).
+ *       og:title and og:description in index.html must also be updated manually — social
+ *       crawlers (LinkedIn, Twitter) don't execute JavaScript so they read the static HTML.
  */
 
 const profile = {
   name: "Aman Verma",
   role: "Full Stack Developer | .NET & Azure",
+  logoText: "aman",
+  resumeFile: "AmanVerma-CV.pdf",
+  pageTitle: "Aman Verma | Backend Engineer",
+  metaDescription:
+    "Backend-focused full stack engineer specialising in .NET and Azure. Based in Auckland.",
   tagline: "I build backend systems\nthat scale.",
+  blogBlurb:
+    "I write about backend architecture, .NET, Azure, and things I'm figuring out as I go.",
   contactBlurb:
     "Not actively looking, but always open to interesting problems, collaborations, or just a good conversation about software architecture.",
   bio: {
