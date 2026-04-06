@@ -16,7 +16,7 @@ export default function Skills() {
         {/* Certifications */}
         <motion.div {...fadeUp}>
           <h2 className="text-3xl font-bold text-white mb-10">Skills & Credentials</h2>
-          <p className="text-white text-base font-semibold mb-6">Certifications</p>
+          <p className="text-xs font-semibold tracking-widest uppercase text-stone-500 mb-6">Certifications</p>
           <div className="grid sm:grid-cols-2 gap-4">
             {profile.certifications.map((cert) => {
               const inner = (
@@ -60,7 +60,7 @@ export default function Skills() {
 
         {/* Tech Stack */}
         <motion.div {...fadeUp}>
-          <p className="text-white text-base font-semibold mb-6">Tech Stack</p>
+          <p className="text-xs font-semibold tracking-widest uppercase text-stone-500 mb-6">Tech Stack</p>
           <div className="space-y-4">
             {profile.stack.map((group) => (
               <div
@@ -87,7 +87,7 @@ export default function Skills() {
 
         {/* Publications */}
         <motion.div {...fadeUp}>
-          <p className="text-white text-base font-semibold mb-6">Publications</p>
+          <p className="text-xs font-semibold tracking-widest uppercase text-stone-500 mb-6">Publications</p>
           <div className="space-y-4">
             {profile.publications.map((pub) => {
               const inner = (
@@ -99,7 +99,7 @@ export default function Skills() {
                     <p className="text-stone-500 text-xs mt-1">
                       {pub.publisher} · {pub.date} · {pub.authors}
                     </p>
-                    <p className="text-stone-500 text-sm mt-2 leading-relaxed">{pub.summary}</p>
+                    <p className="text-stone-400 text-sm mt-2 leading-relaxed">{pub.summary}</p>
                   </div>
                   {pub.url && (
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-stone-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-label="Opens in new tab" role="img">

@@ -24,14 +24,14 @@ export default function About() {
               ))}
             </div>
             <div>
-              <p className="text-white text-base font-semibold mb-3">
+              <p className="text-xs font-semibold tracking-widest uppercase text-stone-500 mb-3">
                 What I'm growing into
               </p>
               <div className="flex flex-wrap gap-2">
                 {profile.interests.map((i) => (
                   <span
                     key={i}
-                    className="text-xs px-3 py-1 border border-stone-600 text-stone-400 rounded-full"
+                    className="text-xs px-3 py-1 border border-stone-700 text-stone-400 rounded-full"
                   >
                     {i}
                   </span>
@@ -41,7 +41,7 @@ export default function About() {
           </motion.div>
 
           <motion.div {...fadeUp} className="space-y-3">
-            <p className="text-white text-base font-semibold mb-3">Education</p>
+            <p className="text-xs font-semibold tracking-widest uppercase text-stone-500 mb-3">Education</p>
             {profile.education.map((edu) => (
               <div
                 key={edu.degree}

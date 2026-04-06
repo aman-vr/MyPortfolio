@@ -33,7 +33,7 @@ export default function Experience() {
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
                     <div>
                       <div className="flex items-center gap-2 flex-wrap">
-                        <h3 className="text-white font-semibold">
+                        <h3 className="text-white text-base font-semibold">
                           {job.title}
                         </h3>
                         {job.note && (

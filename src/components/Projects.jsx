@@ -68,7 +68,7 @@ export default function Projects() {
                 </div>
               </div>
               <p className="text-stone-400 text-base mb-3">{project.oneliner}</p>
-              <p className="text-stone-500 text-base leading-relaxed mb-6">
+              <p className="text-stone-500 text-sm leading-relaxed mb-6">
                 {project.description}
               </p>
               <div className="flex flex-wrap gap-2">
