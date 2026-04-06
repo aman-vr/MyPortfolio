@@ -1,11 +1,20 @@
 // Navbar.jsx — Fixed top nav with mobile menu. Reads: profile.social.github
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import profile from "../data/profile";
 
+const RESUME_PATH = "/AmanVerma-CV.pdf";
+
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [resumeAvailable, setResumeAvailable] = useState(false);
+
+  useEffect(() => {
+    fetch(RESUME_PATH, { method: "HEAD" })
+      .then((res) => setResumeAvailable(res.ok))
+      .catch(() => setResumeAvailable(false));
+  }, []);
   const links = ["About", "Experience", "Projects", "Blog", "Contact"];
 
   return (
@@ -35,15 +44,17 @@ export default function Navbar() {
               GitHub
             </a>
           </li>
-          <li>
-            <a
-              href="/AmanVerma-CV.pdf"
-              download
-              className="text-sm px-4 py-2 border border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-stone-950 rounded transition-all duration-200"
-            >
-              Resume
-            </a>
-          </li>
+          {resumeAvailable && (
+            <li>
+              <a
+                href={RESUME_PATH}
+                download
+                className="text-sm px-4 py-2 border border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-stone-950 rounded transition-all duration-200"
+              >
+                Resume
+              </a>
+            </li>
+          )}
         </ul>
         <button
           className="md:hidden text-stone-400 hover:text-white"
@@ -72,13 +83,15 @@ export default function Navbar() {
           >
             GitHub
           </a>
-          <a
-            href="/AmanVerma-CV.pdf"
-            download
-            className="text-amber-400 hover:text-amber-300 text-sm transition-colors duration-200"
-          >
-            Resume
-          </a>
+          {resumeAvailable && (
+            <a
+              href={RESUME_PATH}
+              download
+              className="text-amber-400 hover:text-amber-300 text-sm transition-colors duration-200"
+            >
+              Resume
+            </a>
+          )}
         </div>
       )}
     </nav>
