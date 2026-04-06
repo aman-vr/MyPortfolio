@@ -2,6 +2,8 @@
 
 Personal portfolio website built with React and Tailwind CSS. Deployed on Vercel.
 
+![Preview](public/preview.jpg)
+
 Live: [aman-vr.vercel.app](https://aman-vr.vercel.app)
 
 ## Tech Stack
