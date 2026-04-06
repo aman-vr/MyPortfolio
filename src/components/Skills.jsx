@@ -1,3 +1,6 @@
+// Skills.jsx — "Skills & Credentials" section with certifications, tech stack, and publications.
+// Reads: profile.certifications, profile.stack, profile.publications
+
 import { motion } from "framer-motion";
 import profile from "../data/profile";
 

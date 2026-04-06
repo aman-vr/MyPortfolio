@@ -5,7 +5,7 @@
  * Update this file only — no component files need to be touched.
  *
  * Fields:
- *  - name, role, tagline, location         → Hero, meta tags
+ *  - name, role, photo, tagline, location   → Hero, meta tags
  *  - contactBlurb                          → Contact section
  *  - bio.short                             → Hero
  *  - bio.long                              → About section
@@ -27,6 +27,7 @@
 const profile = {
   name: "Aman Verma",
   role: "Full Stack Developer | .NET & Azure",
+  photo: "/aman.jpg",
   logoText: "aman",
   resumeFile: "AmanVerma-CV.pdf",
   pageTitle: "Aman Verma | Backend Engineer",
@@ -95,7 +96,7 @@ const profile = {
       authors:
         "Aman Verma, Samiksha Sharma, Kajal K., Siva Rama Krishnan Somayaji",
       summary:
-        "A collaborative book chapter examining ocean pollution caused by industrialisation and environmental neglect. Surveys machine learning techniques to derive data-driven mitigation strategies, with an emphasis on public awareness and ecosystem sustainability.",
+        "A book chapter examining ocean pollution at the intersection of industrialisation and environmental neglect. Surveys machine learning techniques for formulating data-driven mitigation strategies — emphasising public awareness and the role of technology in protecting aquatic ecosystems.",
       url: "https://www.taylorfrancis.com/books/edit/10.1201/9781003348313/sustainable-digital-technologies-vandana-sharma-balamurugan-balusamy-munish-sabharwal-mariya-ouaissa",
     },
   ],
@@ -186,9 +187,9 @@ const profile = {
     {
       title: "Araavi",
       oneliner:
-        "Multitenant immigration management platform with dedicated apps for visa applicants and advisors, built end-to-end on .NET and Azure.",
+        "Multitenant immigration platform with dedicated apps for visa applicants and immigration advisors.",
       description:
-        "Led the full backend architecture and implementation of Araavi — a multitenant platform serving multiple immigration firms from a single codebase via configuration. Built two distinct apps: an Enquiry App for applicants to submit and track visa cases with real-time communication, and an Advisor App for immigration agents covering case management, team collaboration, invoice generation, and user administration. Architected with Unit of Work and Repository patterns for clean data access. Email delivery is handled through Azure Service Bus with automatic retries and delivery tracking. Redis caching reduces response times, and Application Insights provides structured logging for monitoring and debugging. APIs, database schema, and deployment processes are fully documented.",
+        "A multitenant platform serving multiple immigration firms from a single codebase via configuration — no separate deployments per client. Covers two distinct surfaces: an Enquiry App for applicants to submit and track visa cases, and an Advisor App for agents handling case management, invoicing, and team administration. Backed by Azure Service Bus for reliable email delivery with automatic retries, Redis for caching, and Application Insights for structured monitoring.",
       tags: [
         "ASP.NET Core",
         "C#",

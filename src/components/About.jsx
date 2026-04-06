@@ -1,3 +1,6 @@
+// About.jsx — "Who I am" section with bio, interests, and education.
+// Reads: profile.bio.long, profile.interests, profile.education
+
 import { motion } from "framer-motion";
 import profile from "../data/profile";
 

@@ -1,3 +1,6 @@
+// Contact.jsx — "Get In Touch" section with email CTA and social links.
+// Reads: profile.contactBlurb, profile.social, profile.location
+
 import { motion } from "framer-motion";
 import profile from "../data/profile";
 

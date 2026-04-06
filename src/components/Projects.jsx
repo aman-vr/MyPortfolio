@@ -1,3 +1,6 @@
+// Projects.jsx — "What I've Built" section with project cards.
+// Reads: profile.projects
+
 import { motion } from "framer-motion";
 import profile from "../data/profile";
 

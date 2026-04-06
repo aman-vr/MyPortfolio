@@ -1,3 +1,6 @@
+// Hero.jsx — Full-screen landing section.
+// Reads: profile.name, profile.role, profile.photo, profile.tagline, profile.bio.short
+
 import { motion } from "framer-motion";
 import profile from "../data/profile";
 
@@ -8,6 +11,8 @@ const fadeUp = (delay = 0) => ({
 });
 
 export default function Hero() {
+  const taglineLines = profile.tagline.split("\n");
+
   return (
     <section
       id="hero"
@@ -33,10 +38,10 @@ export default function Hero() {
               {...fadeUp(0.3)}
               className="text-3xl md:text-4xl font-bold text-stone-500 mb-8 leading-tight"
             >
-              {profile.tagline.split("\n").map((line, i) => (
+              {taglineLines.map((line, i) => (
                 <span key={i}>
                   {line}
-                  {i < profile.tagline.split("\n").length - 1 && (
+                  {i < taglineLines.length - 1 && (
                     <br className="hidden md:block" />
                   )}
                 </span>
@@ -69,7 +74,7 @@ export default function Hero() {
           >
             <div className="relative w-64 h-64 md:w-72 md:h-72">
               <img
-                src="/aman.jpg"
+                src={profile.photo}
                 alt={`${profile.name}, ${profile.role}`}
                 className="absolute inset-0 w-full h-full object-cover rounded-lg z-10"
               />

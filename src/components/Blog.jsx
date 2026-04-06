@@ -1,3 +1,6 @@
+// Blog.jsx — "Thoughts & Writing" placeholder section.
+// Reads: profile.blogBlurb
+
 import { motion } from "framer-motion";
 import profile from "../data/profile";
 

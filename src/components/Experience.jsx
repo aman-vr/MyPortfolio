@@ -1,3 +1,6 @@
+// Experience.jsx — "Where I've Worked" timeline section.
+// Reads: profile.experience
+
 import { motion } from "framer-motion";
 import profile from "../data/profile";
 
