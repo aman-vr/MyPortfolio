@@ -128,7 +128,55 @@ export default function About() {
           </div>
         </motion.div>
 
-        {/* Row 3: Tech Stack */}
+        {/* Row 3: Publications */}
+        <motion.div {...fadeUp}>
+          <p className="text-white text-base font-semibold mb-6">Publications</p>
+          <div className="space-y-4">
+            {profile.publications.map((pub) => {
+              const inner = (
+                <>
+                  <div className="w-2 h-2 rounded-full bg-amber-400 mt-1.5 shrink-0" />
+                  <div className="flex-1">
+                    <p className="text-white text-sm font-semibold leading-snug">{pub.title}</p>
+                    <p className="text-stone-400 text-sm mt-1">
+                      {pub.book}
+                    </p>
+                    <p className="text-stone-500 text-xs mt-1">
+                      {pub.publisher} · {pub.date} · {pub.authors}
+                    </p>
+                    <p className="text-stone-500 text-sm mt-2 leading-relaxed">{pub.summary}</p>
+                  </div>
+                  {pub.url && (
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-stone-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  )}
+                </>
+              );
+
+              return pub.url ? (
+                <a
+                  key={pub.title}
+                  href={pub.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border border-stone-800 rounded-lg p-5 flex items-start gap-3 hover:border-stone-600 transition-colors duration-200"
+                >
+                  {inner}
+                </a>
+              ) : (
+                <div
+                  key={pub.title}
+                  className="border border-stone-800 rounded-lg p-5 flex items-start gap-3"
+                >
+                  {inner}
+                </div>
+              );
+            })}
+          </div>
+        </motion.div>
+
+        {/* Row 4: Tech Stack */}
         <motion.div {...fadeUp}>
           <p className="text-white text-base font-semibold mb-6">Tech Stack</p>
           <div className="space-y-4">

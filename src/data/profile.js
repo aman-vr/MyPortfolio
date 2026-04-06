@@ -66,6 +66,18 @@ const profile = {
       url: "https://learn.microsoft.com/api/credentials/share/en-us/AmanVerma-4593/5D38E0E1147A5AC4?sharingId=8CA11FB560EAA49E",
     },
   ],
+  publications: [
+    {
+      title: "Effects of Contaminated Ocean Water on the Ecosystem",
+      book: "Sustainable Digital Technologies: Trends, Impacts, and Assessments",
+      publisher: "CRC Press",
+      date: "Sep 2023",
+      authors: "Aman Verma, Samiksha Sharma, Kajal K., Siva Rama Krishnan Somayaji",
+      summary:
+        "A collaborative book chapter examining ocean pollution caused by industrialisation and environmental neglect. Surveys machine learning techniques to derive data-driven mitigation strategies, with an emphasis on public awareness and ecosystem sustainability.",
+      url: "",
+    },
+  ],
   interests: ["System Design", "Solution Architecture", "Agentic AI"],
   stack: [
     {
