@@ -86,6 +86,12 @@ const profile = {
       issued: "Mar 2026",
       url: "https://learn.microsoft.com/api/credentials/share/en-us/AmanVerma-4593/5D38E0E1147A5AC4?sharingId=8CA11FB560EAA49E",
     },
+    {
+      name: "Microsoft Certified: Azure Data Fundamentals",
+      issuer: "Microsoft",
+      issued: "May 2026",
+      url: "https://learn.microsoft.com/api/credentials/share/en-us/AmanVerma-4593/46D91D5E66706ECC?sharingId=8CA11FB560EAA49E",
+    },
   ],
   publications: [
     {
