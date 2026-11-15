@@ -16,7 +16,8 @@
  *  - interests                             → About section
  *  - stack                                 → Skills section
  *  - experience                            → Experience section
- *  - projects (with note, github, live)    → Projects section
+ *  - projects (with note, github, live,    → Projects section
+ *    writeup: internal blog path)
  *
  * Resume: drop the file named resumeFile into /public/ to make the navbar Resume button appear.
  * Meta: pageTitle and metaDescription are applied dynamically (browser tab, search engines).
@@ -26,25 +27,25 @@
 
 const profile = {
   name: "Aman Verma",
-  role: "Software Engineer | .NET & Azure",
+  role: "Software Engineer | .NET, Azure & AI",
   photo: "/portrait.jpg",
   logoText: "aman",
   resumeFile: "resume.pdf",
   pageTitle: "Aman Verma | Software Engineer",
   metaDescription:
-    "Software Engineer with 5+ years of .NET and Azure expertise, based in Auckland, NZ. Building clean, scalable systems and APIs.",
+    "Software Engineer with 5+ years of .NET and Azure expertise, based in Auckland, NZ. Building clean, scalable systems, with a growing focus on AI.",
   tagline: "I love building systems\nthat scale.",
   blogBlurb:
     "Thoughts on software engineering, system design, AI, and the occasional thing I had to learn the hard way.",
   contactBlurb:
-    "Always open to interesting problems, good collaborations, or just a conversation about software — feel free to reach out.",
+    "Always open to interesting problems, good collaborations, or just a conversation about software. Feel free to reach out.",
   bio: {
     short:
-      "Microsoft Certified software engineer with 5+ years of experience. I build full stack systems with a focus on clean architecture and thoughtful design. I also bring a commercial mindset to engineering — shaped by dual master's degrees in both tech and business.",
+      "Microsoft Certified software engineer with 5+ years of experience. I build full stack systems with a focus on clean architecture and thoughtful design, and increasingly use AI to make that work faster and more consistent. I also bring a commercial mindset to engineering, shaped by dual master's degrees in tech and business.",
     long: [
-      "Most of my work has been designing and shipping REST APIs and cloud services on .NET and Azure — focused on systems where cutting corners early costs multiples later. Clean architecture, honest contracts, thorough documentation, and code the next developer can actually pick up and run with.",
-      "I hold dual master's degrees — Computer Applications and Business Informatics — meaning I can sit in a commercial conversation and translate it directly into engineering decisions. What it costs, what it enables, whether it's solving the right problem.",
-      "Outside of work, I'm exploring Agentic AI and how it's reshaping full stack development. The industry doesn't stand still, and neither do I.",
+      "Most of my work has been designing and shipping REST APIs and cloud services on .NET and Azure, focused on systems where cutting corners early costs multiples later. Clean architecture, honest contracts, thorough documentation, and code the next developer can actually pick up and run with.",
+      "I hold dual master's degrees in Computer Applications and Business Informatics, meaning I can sit in a commercial conversation and translate it directly into engineering decisions. What it costs, what it enables, whether it's solving the right problem.",
+      "Lately I've been building AI into my own engineering workflow, turning repetitive work into consistent, tested automation. I write about what I learn along the way on my blog.",
     ],
   },
   location: "Auckland, NZ",
@@ -102,11 +103,11 @@ const profile = {
       authors:
         "Aman Verma, Samiksha Sharma, Kajal K., Siva Rama Krishnan Somayaji",
       summary:
-        "A book chapter examining ocean pollution at the intersection of industrialisation and environmental neglect. Surveys machine learning techniques for formulating data-driven mitigation strategies — emphasising public awareness and the role of technology in protecting aquatic ecosystems.",
+        "A book chapter examining ocean pollution at the intersection of industrialisation and environmental neglect. Surveys machine learning techniques for formulating data-driven mitigation strategies, emphasising public awareness and the role of technology in protecting aquatic ecosystems.",
       url: "https://www.taylorfrancis.com/books/edit/10.1201/9781003348313/sustainable-digital-technologies-vandana-sharma-balamurugan-balusamy-munish-sabharwal-mariya-ouaissa",
     },
   ],
-  interests: ["System Design", "Agentic AI"],
+  interests: ["System Design", "AI in Software Engineering"],
   stack: [
     {
       category: "Backend",
@@ -129,6 +130,10 @@ const profile = {
     {
       category: "Practices",
       skills: ["Clean Architecture", "Domain-Driven Design", "xUnit"],
+    },
+    {
+      category: "AI",
+      skills: ["GitHub Copilot", "Model Context Protocol (MCP)", "AI-assisted workflows"],
     },
   ],
   experience: [
@@ -175,7 +180,7 @@ const profile = {
       oneliner:
         "Private cloud-based movie streaming platform with HLS streaming and token-based access control.",
       description:
-        "Raw video files are never publicly exposed — an automated FFmpeg ingestion pipeline transcodes uploads into encrypted HLS segments, stored in private Azure Blob Storage and served via time-limited SAS URLs. Access is managed through magic links with SHA256-hashed tokens. Built with clean architecture across four layered .NET projects.",
+        "Raw video files are never publicly exposed: an automated FFmpeg ingestion pipeline transcodes uploads into encrypted HLS segments, stored in private Azure Blob Storage and served via time-limited SAS URLs. Access is managed through magic links with SHA256-hashed tokens. Built with clean architecture across four layered .NET projects.",
       tags: [
         ".NET 8",
         "React",
@@ -191,11 +196,24 @@ const profile = {
       featured: true,
     },
     {
+      title: "Copilot Skills Toolkit",
+      oneliner:
+        "A personal set of AI skills that handle the repetitive parts of everyday engineering work.",
+      description:
+        "Ten GitHub Copilot skills covering board updates, build health, tests, docs, security scans and PR reviews, all following the same standards so the output is consistent every time. Every change is previewed and approved before it's applied, and the safety checks are covered by 100+ tests.",
+      tags: ["GitHub Copilot", "MCP", "Azure DevOps", "PowerShell", "Pester"],
+      github: null,
+      live: null,
+      writeup: "/blog/governed-ai-agent-ecosystem",
+      featured: false,
+      note: "Personal",
+    },
+    {
       title: "Araavi",
       oneliner:
         "Multitenant immigration platform with dedicated apps for visa applicants and immigration advisors.",
       description:
-        "Serves multiple immigration firms from a single codebase via configuration — no separate deployments per client. Covers two distinct surfaces: an Enquiry App for applicants to submit and track visa cases, and an Advisor App for agents handling case management, invoicing, and team administration. Backed by Azure Service Bus for reliable email delivery with automatic retries, Redis for caching, and Application Insights for structured monitoring.",
+        "Serves multiple immigration firms from a single codebase via configuration, with no separate deployments per client. Covers two distinct surfaces: an Enquiry App for applicants to submit and track visa cases, and an Advisor App for agents handling case management, invoicing, and team administration. Backed by Azure Service Bus for reliable email delivery with automatic retries, Redis for caching, and Application Insights for structured monitoring.",
       tags: [
         "ASP.NET Core",
         "C#",
