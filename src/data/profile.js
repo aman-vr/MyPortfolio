@@ -33,19 +33,19 @@ const profile = {
   resumeFile: "resume.pdf",
   pageTitle: "Aman Verma | Software Engineer",
   metaDescription:
-    "Software Engineer with 5+ years of .NET and Azure expertise, based in Auckland, NZ. Building clean, scalable systems, with a growing focus on AI.",
-  tagline: "I love building systems\nthat scale.",
+    "Software Engineer with 4+ years of .NET and Azure expertise, based in Auckland, NZ. Building clean, scalable systems, with a growing focus on AI.",
+  tagline: "I build systems that scale,\nand automate the parts\nI'd rather not do.",
   blogBlurb:
     "Thoughts on software engineering, system design, AI, and the occasional thing I had to learn the hard way.",
   contactBlurb:
-    "Always open to interesting problems, good collaborations, or just a conversation about software. Feel free to reach out.",
+    "Always up for an interesting problem, a good collaboration, or a conversation about software. Say hi.",
   bio: {
     short:
-      "Microsoft Certified software engineer with 5+ years of experience. I build full stack systems with a focus on clean architecture and thoughtful design, and increasingly use AI to make that work faster and more consistent. I also bring a commercial mindset to engineering, shaped by dual master's degrees in tech and business.",
+      "Software engineer with 4+ years building full stack systems on .NET and Azure, with a focus on clean architecture and thoughtful design. Lately I use AI to make that work faster and more consistent, with guardrails I trust. Dual master's degrees in tech and business mean I think about cost and value, not just code.",
     long: [
       "Most of my work has been designing and shipping REST APIs and cloud services on .NET and Azure, focused on systems where cutting corners early costs multiples later. Clean architecture, honest contracts, thorough documentation, and code the next developer can actually pick up and run with.",
       "I hold dual master's degrees in Computer Applications and Business Informatics, meaning I can sit in a commercial conversation and translate it directly into engineering decisions. What it costs, what it enables, whether it's solving the right problem.",
-      "Lately I've been building AI into my own engineering workflow, turning repetitive work into consistent, tested automation. I write about what I learn along the way on my blog.",
+      "Lately I've been building AI into my own workflow: a set of skills that take on the repetitive parts of the job while I stay in the loop, orchestrating the work and signing it off. It's taught me as much about engineering discipline as about AI, and I write about it on my blog.",
     ],
   },
   location: "Auckland, NZ",
@@ -198,9 +198,9 @@ const profile = {
     {
       title: "Copilot Skills Toolkit",
       oneliner:
-        "A personal set of AI skills that handle the repetitive parts of everyday engineering work.",
+        "A personal set of AI skills that take the repetitive work out of my day, with me in the loop for every change.",
       description:
-        "Ten GitHub Copilot skills covering board updates, build health, tests, docs, security scans and PR reviews, all following the same standards so the output is consistent every time. Every change is previewed and approved before it's applied, and the safety checks are covered by 100+ tests.",
+        "Ten GitHub Copilot skills built one at a time on shared standards, so the output is consistent every time. AI does the work; I orchestrate and approve. Every write is previewed and tied to an approval code, the guards are covered by 100+ tests, and one skill keeps the rest in check.",
       tags: ["GitHub Copilot", "MCP", "Azure DevOps", "PowerShell", "Pester"],
       github: null,
       live: null,

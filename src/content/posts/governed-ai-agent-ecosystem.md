@@ -4,7 +4,9 @@ It started with my DevOps board. Classic engineer move: two weeks later, alongsi
 
 ![Expanding brain meme. Updating the board by hand. Asking Copilot to write the updates. Building a skill that writes them. Building 10 skills and 100+ tests to avoid a 10-minute chore.](/images/blog/governed-ai-agent-ecosystem/meme-expanding-brain.jpg)
 
-In my defence, I'm a slightly paranoid developer. I wasn't going to let an agent near real work until it had earned my trust, and I wanted that trust to come from guardrails I could test, not from hoping the model follows instructions. That's also why this isn't a post about letting agents run free. Plenty of companies aren't ready for that, often for good reasons: risk, audit, regulation, or a culture that wants a person accountable for every change. In those places, the realistic model isn't "automate it all". It's developers in the loop: AI does the work, and the developer orchestrates it and signs off.
+In my defence, I'm a slightly paranoid developer. I wasn't going to let an agent near real work until it had earned my trust, and I wanted that trust to come from guardrails I could test, not from hoping the model follows instructions.
+
+That's also why this isn't a post about letting agents run free. Plenty of companies aren't ready for that, often for good reasons: risk, audit, regulation, or a culture that wants a person accountable for every change. In those places, the realistic model isn't "automate it all". It's **developers in the loop**: AI does the work, and the developer orchestrates it and signs off.
 
 > **The short version**
 >
@@ -49,15 +51,15 @@ I also document what works and what doesn't, so the lessons don't live only in m
 
 The next skill gets picked by counting, not by ideas. I look at what I actually keep asking the agent for, and the repeats win. Several brilliant-sounding ideas never made the cut.
 
-It was all genuinely useful, and that was the part that worried me. I'd given a confident, fast model write access to things other people read.
-
 ## The problem with polite rules
+
+It was all genuinely useful, and that was the part that worried me. I'd given a confident, fast model write access to things other people read.
 
 My first guardrails were sentences in the skill files. "Always show me a preview." "Never touch protected files." They worked most of the time, which is a lovely quality in a coworker and a terrible one in a guardrail.
 
-The case I worried about most was approval drift. I approve a preview, then say "yes, but change this one line", and what lands is no longer what I approved. A rule written in the skill file can't reliably stop that, because a quick "yes, but…" from me is enough to talk the agent past it.
+The case I worried about most was **approval drift**. I approve a preview, then say "yes, but change this one line", and what lands is no longer what I approved. A rule written in the skill file can't reliably stop that, because a quick "yes, but…" from me is enough to talk the agent past it.
 
-So I settled on one principle: analysis is free, change is earned. The agent can read, search, build and test as much as it likes. Anything that changes something goes through a script that enforces the rules, and the script doesn't care how persuasive the model is.
+So I settled on one principle: **analysis is free, change is earned**. The agent can read, search, build and test as much as it likes. Anything that changes something goes through a script that enforces the rules, and the script doesn't care how persuasive the model is.
 
 ## Following one request through the loop
 
@@ -66,12 +68,14 @@ Here's what happens now when I ask: "Create a user story for this requirement, w
 ![The agent proposes, the script decides: you ask, the agent reads and plans, a preview is shown, you approve the exact version, a guarded script applies it only if the approval code matches, then it verifies and logs. Any edit to the preview produces a new preview.](/images/blog/governed-ai-agent-ecosystem/agent-loop.svg)
 
 1. **It reads first, without asking.** The board skill loads my templates for stories and tasks, how I tag them and my preferred writing style, then reads the requirement.
-2. **It shows a preview, and nothing is applied.** The story and every task appear exactly as they would on the board, in one preview. The script attaches an approval code: a fingerprint of that exact content (and, when updating existing items, of each item's current version). If anything looks like a secret, it stops before the preview is even shown.
+2. **It shows a preview, and nothing is applied.** The story and every task appear exactly as they would on the board, in one preview. The script attaches an **approval code**: a fingerprint of that exact content (and, when updating existing items, of each item's current version). If anything looks like a secret, it stops before the preview is even shown.
 3. **I ask for a tweak.** "Split the API task into two." That isn't approval. It produces a new preview and a new code.
 4. **I approve the final version.** The script applies only if the code still matches. If a word changed, or someone edited an existing item in the meantime, it refuses and writes nothing. If one item in the batch is blocked, the whole batch is.
 5. **It verifies and logs.** It confirms what landed and records metadata only: what changed and when, never the content.
 
-The agent can't talk its way around a hash. That's the whole trick. And there's no delete script at all, because you can't misuse a capability that doesn't exist.
+The agent can't talk its way around a hash. That's the whole trick.
+
+There's also no delete script at all. You can't misuse a capability that doesn't exist.
 
 ## Who checks the checkers?
 
@@ -94,13 +98,15 @@ The board flow is one path through a bigger stack. Rules flow down, and the stri
 | 2 | Only when my current message names it | Protected files, deleting files, adding packages, big batch changes |
 | 3 | Never | Git commits, posting outside the approved flow, printing secrets, editing a guard to get past it |
 
-Shared standards for code quality, documentation, testing, security and logging sit under every skill, and a repo's own standard always wins over mine.
-
 ### What standardising bought me
+
+Shared standards for code quality, documentation, testing, security and logging sit under every skill, and a repo's own standard always wins over mine.
 
 Every skill follows the same contract: load the guardrails first, and for anything that writes, preview before applying, apply only the final version I approve, log metadata only, and have tests for its guards. That one decision is where most of the value came from.
 
-Stories, bugs, reviews and doc updates come out in the same structure every time, and a request is one sentence rather than a briefing, because the context and conventions live in files. Every change arrives the same way, as a numbered list or a preview, so checking it is quick. Code work is scoped to my branch, and anything out of scope gets counted, not fixed.
+Stories, bugs, reviews and doc updates come out in the same structure every time, and a request is one sentence rather than a briefing, because the context and conventions live in files.
+
+Every change arrives the same way, as a numbered list or a preview, so checking it is quick. Code work is scoped to my branch, and anything out of scope gets counted, not fixed.
 
 It also made the setup cheap to extend and easy to rebuild. A new skill inherits the guardrails, standards and test patterns instead of reinventing them, and with a rebuild guide, the whole thing can be rebuilt from three files: the philosophy, my working style and my personal rules.
 
@@ -116,8 +122,8 @@ Two honest caveats. This is a personal setup, not a replacement for security rev
 
 ## Closing
 
+If there's one thing to take away: a rule in a prompt is a request. A rule in a script is a fact.
+
 This isn't the most advanced agent setup out there, and it doesn't need to be. The ambitious stuff can come later; the trust has to come first.
 
 ![It ain't much, but it's honest work.](/images/blog/governed-ai-agent-ecosystem/meme-honest-work.jpg)
-
-A rule in a prompt is a request. A rule in a script is a fact.

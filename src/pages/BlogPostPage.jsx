@@ -78,7 +78,7 @@ export default function BlogPostPage() {
 
         <header className="mt-8 mb-12 pb-10 border-b border-stone-800">
           <p className="text-amber-400 text-sm font-mono mb-4 tracking-wider">
-            {formatPostDate(post.date)}
+            {profile.name} · {formatPostDate(post.date)}
           </p>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-5">
             {post.title}
