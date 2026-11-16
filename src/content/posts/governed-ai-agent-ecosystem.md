@@ -1,12 +1,12 @@
-The parts of my job I'd most happily hand to AI are the repetitive ones: updating work items, chasing build warnings, keeping docs current.
+If AI is coming for my job, it can start with the parts I hate: updating work items, chasing build warnings, keeping docs current.
 
-It started with my DevOps board. Classic engineer move: two weeks later, alongside my actual work, that one chore had turned into ten AI skills, a set of guardrails and 100+ tests, all running on my own machine.
+First up was my DevOps board. In classic engineer fashion, that one chore turned into ten AI skills, a set of guardrails and 100+ tests within two weeks, built alongside my actual work and all running on my own machine.
 
 ![Expanding brain meme. Updating the board by hand. Asking Copilot to write the updates. Building a skill that writes them. Building 10 skills and 100+ tests to avoid a 10-minute chore.](/images/blog/governed-ai-agent-ecosystem/meme-expanding-brain.jpg)
 
-In my defence, I'm a slightly paranoid developer. I wasn't going to let an agent near real work until it had earned my trust, and I wanted that trust to come from guardrails I could test, not from hoping the model follows instructions.
+In my defence, I'm a slightly paranoid developer. I wasn't letting AI near real work until it had earned my trust, and I wanted that trust to come from guardrails I could test, not from hoping the model follows instructions.
 
-That's also why this isn't a post about letting agents run free. Plenty of companies aren't ready for that, often for good reasons: risk, audit, regulation, or a culture that wants a person accountable for every change. In those places, the realistic model isn't "automate it all". It's **developers in the loop**: AI does the work, and the developer orchestrates it and signs off.
+This also isn't a post about letting agents run free. Plenty of companies aren't ready for that, often for good reasons: risk, audit, regulation, or a culture that wants a person accountable for every change. In those places, the realistic model isn't "automate it all". It's **developers in the loop**: AI does the work, and the developer orchestrates it and signs off.
 
 > **The short version**
 >

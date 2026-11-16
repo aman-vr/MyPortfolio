@@ -20,8 +20,8 @@
 const posts = [
   {
     slug: "governed-ai-agent-ecosystem",
-    title: "If AI is coming for my job, it can start with the parts I hate",
-    subtitle: "I automated one chore and ended up with ten AI skills and an ecosystem to stop them going rogue.",
+    title: "Building AI skills I can actually trust",
+    subtitle: "What I learned turning everyday dev chores into AI skills, without letting them go rogue.",
     description:
       "How keeping my DevOps board up to date turned into ten Copilot skills, guardrails enforced in code, a skill that checks the others and 100+ tests, and what it taught me about adopting AI safely.",
     date: "2026-11-16",
