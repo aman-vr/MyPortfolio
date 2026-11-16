@@ -15,6 +15,7 @@
  *  - date         → publish date, ISO format (YYYY-MM-DD)
  *  - tags         → shown on the blog card
  *  - ogImage      → 1200x630 preview image path under /public
+ *  - discussUrl   → optional LinkedIn post URL for the "Discuss on LinkedIn" button (defaults to the profile)
  */
 
 const posts = [
@@ -23,9 +24,9 @@ const posts = [
     title: "Building AI skills I can actually trust",
     subtitle: "What I learned turning everyday dev chores into AI skills, without letting them go rogue.",
     description:
-      "How keeping my DevOps board up to date turned into ten Copilot skills, guardrails enforced in code, a skill that checks the others and 100+ tests, and what it taught me about adopting AI safely.",
+      "How keeping my DevOps board up to date turned into ten Copilot skills, rules enforced in code rather than prompts, a skill that checks the others and 100+ tests, and what it taught me about adopting AI safely.",
     date: "2026-11-16",
-    tags: ["Agentic AI", "GitHub Copilot", "MCP", "Guardrails"],
+    tags: ["AI", "GitHub Copilot", "MCP", "Developer workflow"],
     ogImage: "/images/blog/governed-ai-agent-ecosystem/og.png",
   },
 ];

@@ -30,7 +30,7 @@ What was still missing was the context I kept retyping. That became a skill: a m
 
 ## Then everything became a skill
 
-After that I started noticing every instruction I'd given twice. Within those same two weeks, ten skills took over most of the repetitive parts of my day. A few of them:
+After that I started noticing every instruction I'd given twice. Within those same two weeks, ten skills took over most of the repetitive parts of my day. The main ones:
 
 | Skill | What it does for me |
 | --- | --- |
@@ -79,7 +79,7 @@ There's also no delete script at all. You can't misuse a capability that doesn't
 
 ## Who checks the checkers?
 
-A guard nobody has tried to break is just another polite rule. So the guards have their own test suite, run against fake folders and stubbed external calls, so a test can never touch anything real. Each test tries to trick a guard: a stale approval code, a file outside the approved plan, a secret hidden in a description.
+A guard nobody has tried to break is just another polite rule. So the guards have their own test suite (the scripts are PowerShell and the tests are Pester), run against fake folders and stubbed external calls, so a test can never touch anything real. Each test tries to trick a guard: a stale approval code, a file outside the approved plan, a secret hidden in a description.
 
 Three rules came out of this: tests before guards, guards before skills, and never weaken a guard to make a test pass.
 
@@ -102,13 +102,7 @@ The board flow is one path through a bigger stack. Rules flow down, and the stri
 
 Shared standards for code quality, documentation, testing, security and logging sit under every skill, and a repo's own standard always wins over mine.
 
-Every skill follows the same contract: load the guardrails first, and for anything that writes, preview before applying, apply only the final version I approve, log metadata only, and have tests for its guards. That one decision is where most of the value came from.
-
-Stories, bugs, reviews and doc updates come out in the same structure every time, and a request is one sentence rather than a briefing, because the context and conventions live in files.
-
-Every change arrives the same way, as a numbered list or a preview, so checking it is quick. Code work is scoped to my branch, and anything out of scope gets counted, not fixed.
-
-It also made the setup cheap to extend and easy to rebuild. A new skill inherits the guardrails, standards and test patterns instead of reinventing them, and with a rebuild guide, the whole thing can be rebuilt from three files: the philosophy, my working style and my personal rules.
+Every skill follows the same contract: load the guardrails first, and for anything that writes, preview before applying, apply only the final version I approve, log metadata only, and have tests for its guards. Because of that, a new skill inherits the rules instead of reinventing them, a request is one sentence rather than a briefing, and the whole setup can be rebuilt from three files: the philosophy, my working style and my personal rules.
 
 ## If I started again
 

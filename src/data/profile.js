@@ -76,12 +76,6 @@ const profile = {
   ],
   certifications: [
     {
-      name: "Microsoft Certified: Azure Developer Associate",
-      issuer: "Microsoft",
-      issued: "Jan 2024",
-      url: "https://learn.microsoft.com/api/credentials/share/en-us/AmanVerma-0981/61380A6EBAA17264?sharingId",
-    },
-    {
       name: "Microsoft Certified: Azure Fundamentals",
       issuer: "Microsoft",
       issued: "Mar 2026",
@@ -92,6 +86,12 @@ const profile = {
       issuer: "Microsoft",
       issued: "May 2026",
       url: "https://learn.microsoft.com/api/credentials/share/en-us/AmanVerma-4593/46D91D5E66706ECC?sharingId=8CA11FB560EAA49E",
+    },
+    {
+      name: "Microsoft Certified: Azure Developer Associate",
+      issuer: "Microsoft",
+      issued: "Jan 2024",
+      url: "https://learn.microsoft.com/api/credentials/share/en-us/AmanVerma-0981/61380A6EBAA17264?sharingId",
     },
   ],
   publications: [
@@ -130,6 +130,10 @@ const profile = {
     {
       category: "Practices",
       skills: ["Clean Architecture", "Domain-Driven Design", "xUnit"],
+    },
+    {
+      category: "Tooling",
+      skills: ["Azure DevOps", "PowerShell", "Pester"],
     },
     {
       category: "AI",

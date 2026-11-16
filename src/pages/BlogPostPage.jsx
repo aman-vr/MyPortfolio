@@ -110,7 +110,7 @@ export default function BlogPostPage() {
             &larr; Back to all writing
           </Link>
           <a
-            href={profile.social.linkedin}
+            href={post.discussUrl ?? profile.social.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm px-4 py-2 border border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-stone-950 rounded transition-all duration-200"

@@ -1,5 +1,5 @@
 // Navbar.jsx — Fixed top nav with mobile menu and resume button.
-// Reads: profile.social.github. Resume button auto-shows when /public/AmanVerma-CV.pdf exists.
+// Reads: profile.social.github. Resume button auto-shows when /public/<profile.resumeFile> exists.
 // Section links are absolute (/#about) so they also work from a blog post page.
 
 import { useState, useEffect } from "react";

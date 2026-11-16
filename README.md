@@ -40,9 +40,9 @@ src/
 │   ├── Navbar.jsx
 │   ├── Hero.jsx
 │   ├── About.jsx
-│   ├── Skills.jsx
 │   ├── Experience.jsx
 │   ├── Projects.jsx
+│   ├── Skills.jsx
 │   ├── Blog.jsx
 │   ├── Contact.jsx
 │   └── Footer.jsx
@@ -57,7 +57,7 @@ All personal content is centralised in `src/data/profile.js`. To use this as a t
 1. Fork or clone the repo
 2. Update `src/data/profile.js` with new personal details
 3. Set `VITE_APP_URL` in `.env` to your deployed URL (used for OG meta tags)
-4. Drop your CV as `public/AmanVerma-CV.pdf` to enable the Resume button in the navbar
+4. Drop your CV into `public/` with the filename set by `resumeFile` in `profile.js` (default `resume.pdf`) to enable the Resume button in the navbar
 5. Deploy to Vercel
 
 ## Getting Started
@@ -93,8 +93,8 @@ Deployed on [Vercel](https://vercel.com). Every push to `main` triggers an autom
 | ----------------- | ---------------------------------------------------- |
 | Hero              | Name, tagline, bio, CTA buttons                      |
 | About             | Bio paragraphs, interests, education                 |
-| Skills            | Certifications, tech stack, publications             |
 | Experience        | Work history timeline                                |
 | Projects          | Featured projects with tech tags and links           |
+| Skills            | Certifications, tech stack, publications             |
 | Blog              | Post cards linking to /blog/:slug                    |
 | Contact           | Email CTA, social links                              |
