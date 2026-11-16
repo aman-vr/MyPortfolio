@@ -1,6 +1,6 @@
 If AI is coming for my job, it can start with the parts I hate: updating work items, chasing build warnings, keeping docs current.
 
-First up was my DevOps board. In classic engineer fashion, that one chore turned into ten AI skills, a set of guardrails and 100+ tests within two weeks, built alongside my actual work and all running on my own machine.
+First up was my DevOps board. In classic engineer fashion, that one chore turned into ten AI skills, a set of guardrails and 100+ tests within two weeks, all running locally.
 
 ![Expanding brain meme. Updating the board by hand. Asking Copilot to write the updates. Building a skill that writes them. Building 10 skills and 100+ tests to avoid a 10-minute chore.](/images/blog/governed-ai-agent-ecosystem/meme-expanding-brain.jpg)
 
@@ -18,7 +18,7 @@ This also isn't a post about letting agents run free. Plenty of companies aren't
 
 ## The copy-paste loop
 
-Nobody enjoys updating work items, the stories, tasks and bugs on the board. But I rely on the visibility they give, for my team and for myself: everyone should be able to see what's actually happening, not what we optimistically planned three sprints ago.
+Nobody enjoys updating work items: the stories, tasks and bugs on the board. But I rely on the visibility they give, for my team and for myself: everyone should see what's actually happening, not the plan from three sprints ago.
 
 So my routine was: explain the feature and the format I wanted, copy Copilot's draft into Azure DevOps, fix the formatting, then explain it all again for the next item to an assistant with the memory of a goldfish. The AI did the writing; I did the copying, pasting and fixing.
 
@@ -32,22 +32,28 @@ What was still missing was the context I kept retyping. That became a skill: a m
 
 After that I started noticing every instruction I'd given twice. Within those same two weeks, ten skills took over most of the repetitive parts of my day. The main ones:
 
-| Skill | What it does for me |
-| --- | --- |
-| Board read | Handles the board reading I'd otherwise click through: items, details and links, pulled read-only and summarised the way I need them |
-| Board write | Creates and updates stories, tasks and bugs in my preferred structure and style |
-| Build health | Lists warnings on my branch, separates mine from what a merge brought in, and fixes causes instead of suppressing them |
-| Tests | Runs unit tests, adds missing ones, and checks whether a failure also happens on the base branch |
-| Docs | Adds XML docs and keeps comments and READMEs in step with the code, consistent with the documentation standards |
-| Security scan | Runs CodeQL with the pipeline's settings and triages each alert before I raise a PR |
-| PR review | Drafts a review against the repo's own guidelines and the shared engineering standards, flagging breaking changes and violations. I read it before anything is posted |
-| Skills health | Checks the setup itself: integrity, stale logs, broken references |
+| Skill         | What it does for me                                                                                                                                   |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Board read    | Handles the board reading I'd otherwise click through: items, details and links, pulled read-only and summarised the way I need them                  |
+| Board write   | Creates and updates stories, tasks and bugs in my preferred structure and style                                                                       |
+| Build health  | Lists warnings on my branch, separates mine from what a merge brought in, and fixes causes instead of suppressing them                                |
+| Tests         | Runs unit tests, adds missing ones, and checks whether a failure also happens on the base branch                                                      |
+| Docs          | Adds XML docs and keeps comments and READMEs in step with the code, following my documentation standards                                              |
+| Security scan | Runs a static analysis scan set up to match CI and triages each alert before I raise a PR                                                             |
+| PR review     | Drafts a review against the repo's own guidelines and my own standards, flagging breaking changes and violations. I read it before anything is posted |
+| Skills health | Checks the setup itself: integrity, stale logs, broken references                                                                                     |
 
 ## Skill by skill, never right the first time
 
 I didn't design ten skills up front. I built one, used it until something annoyed me, and fixed what annoyed me. Every major run ends the same way: what worked, what didn't, and what the skill should do differently next time. That goes into the skill or the shared standards straight away, while it's fresh.
 
-I also document what works and what doesn't, so the lessons don't live only in my head. It's why the tenth skill took a fraction of the effort of the first: each new one starts from the same rules, standards and test patterns, plus everything the earlier ones got wrong.
+Three examples of what that looks like:
+
+- **Empty is not "didn't happen".** One skill read "no rows came back" as "it didn't happen", when the data source was sampled. The fix wasn't a sterner instruction: its output now says how much of the data it actually saw, and a test checks for that.
+- **Screenshots.** Editing a work item description would have silently dropped any screenshots in it, so board write now keeps them in a temporary backup, restores them after the edit, and flags any that look outdated or at risk of being lost. A test covers it.
+- **Two modes for PR review.** On my own code it can be as critical and as long as it likes. For others it carries only the high-priority findings, never my personal preferences, and says what and why but never how to fix it.
+
+I write the lessons down so they don't live only in my head. It's why the tenth skill took a fraction of the effort of the first: it started from the same rules and test patterns, plus everything the earlier ones got wrong.
 
 The next skill gets picked by counting, not by ideas. I look at what I actually keep asking the agent for, and the repeats win. Several brilliant-sounding ideas never made the cut.
 
@@ -79,11 +85,11 @@ There's also no delete script at all. You can't misuse a capability that doesn't
 
 ## Who checks the checkers?
 
-A guard nobody has tried to break is just another polite rule. So the guards have their own test suite (the scripts are PowerShell and the tests are Pester), run against fake folders and stubbed external calls, so a test can never touch anything real. Each test tries to trick a guard: a stale approval code, a file outside the approved plan, a secret hidden in a description.
+A guard nobody has tried to break is just another polite rule. So the guards have their own test suite (the scripts are PowerShell and the tests are Pester), run against fake folders and stubbed external calls, so a test can never touch anything real. Each test tries to trick a guard and expects a refusal that says what went wrong without leaking anything. Ask it to touch a file outside the approved plan and it blocks the change as out of scope until I name the file. Paste a fake token into a description and it refuses, says it looks like a secret, and never echoes the token back.
 
 Three rules came out of this: tests before guards, guards before skills, and never weaken a guard to make a test pass.
 
-Skills drift too: a quick edit here, a stale reference there. So one skill's whole job is checking the other nine. It fingerprints the guards, standards and skills, flags anything that changed since I last reviewed it, and catches broken references and stale logs. It's the closest thing the setup has to a code review for itself.
+Skills drift too: a quick edit here, a stale reference there. So one skill's whole job is checking the other nine. It keeps a hash of every guard, standard and skill as a baseline. If one is quietly loosened, by anyone or by an assistant, the next check reports it as changed (or new, or missing) and keeps reporting until I review the change and record a new baseline, which it only does when I ask. It also catches broken references and stale logs. It's the closest thing the setup has to a code review for itself.
 
 ## Zooming out: the ecosystem
 
@@ -91,18 +97,16 @@ The board flow is one path through a bigger stack. Rules flow down, and the stri
 
 ![Rules flow down, and the stricter rule always wins: personal rules file, guardrails, standards, skills, scripts and guards, and config, with docs, a health check and tests alongside.](/images/blog/governed-ai-agent-ecosystem/ecosystem-layers.svg)
 
-| Tier | What it means | Examples |
-| --- | --- | --- |
-| 0 | Runs without asking | Build, unit tests, scans, reading the board |
-| 1 | Numbered list, I pick, I approve the final version | Warning fixes, doc updates, new tests |
-| 2 | Only when my current message names it | Protected files, deleting files, adding packages, big batch changes |
-| 3 | Never | Git commits, posting outside the approved flow, printing secrets, editing a guard to get past it |
+| Tier | What it means                                      | Examples                                                                                         |
+| ---- | -------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| 0    | Runs without asking                                | Build, unit tests, scans, reading the board                                                      |
+| 1    | Numbered list, I pick, I approve the final version | Warning fixes, doc updates, new tests                                                            |
+| 2    | Only when my current message names it              | Protected files, deleting files, adding packages, big batch changes                              |
+| 3    | Never                                              | Git commits, posting outside the approved flow, printing secrets, editing a guard to get past it |
 
 ### What standardising bought me
 
-Shared standards for code quality, documentation, testing, security and logging sit under every skill, and a repo's own standard always wins over mine.
-
-Every skill follows the same contract: load the guardrails first, and for anything that writes, preview before applying, apply only the final version I approve, log metadata only, and have tests for its guards. Because of that, a new skill inherits the rules instead of reinventing them, a request is one sentence rather than a briefing, and the whole setup can be rebuilt from three files: the philosophy, my working style and my personal rules.
+Shared standards for code quality, documentation, testing, security and logging sit under every skill, and a repo's own standard always wins over mine. Every skill also follows one contract: load the guardrails first, and for anything that writes, preview before applying, apply only the final version I approve, log metadata only, and have tests for its guards. That's why a new skill inherits the rules instead of reinventing them, a request is one sentence rather than a briefing, and the whole setup can be rebuilt from three files: the philosophy, my working style and my personal rules.
 
 ## If I started again
 
@@ -110,7 +114,7 @@ Every skill follows the same contract: load the guardrails first, and for anythi
 - **Start read-only.** Reading is where agents are most useful and least dangerous, and it builds the trust you need before letting them write.
 - **Add one guarded write.** Preview, approve the exact version, apply only through a script that checks it. One is enough to learn the pattern.
 - **Write the tests before the guards.** Fake folders, stubbed network calls and a test for every refusal.
-- **Expect to pay up front.** Building this took thousands of credits. Running it is cheap, because scripts do the deterministic work, the model only orchestrates, and skills stop me paying to re-explain context.
+- **Expect to pay up front.** Building this takes a lot of model usage. Running it is cheap, because scripts do the deterministic work, the model only orchestrates, and skills stop me paying to re-explain context.
 
 Two honest caveats. This is a personal setup, not a replacement for security reviews, access policies or anyone whose job is to say no. And guardrails lower risk without removing it: the script makes sure only what I approved lands, but it can't make me approve the right thing.
 
