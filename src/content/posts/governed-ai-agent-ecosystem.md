@@ -1,8 +1,21 @@
+The part of my job I'd most happily hand to AI is the admin around the code. Turns out that's exactly what it's good at.
+
 Classic engineer move: to keep my DevOps board up to date, I built a whole custom skills ecosystem with 100+ tests, on my own machine, over two weeks alongside my actual work.
 
 ![Expanding brain meme. Updating the board by hand. Asking Copilot to write the updates. Building a skill that writes them. Building 10 skills and 100+ tests to avoid a 10-minute chore.](/images/blog/governed-ai-agent-ecosystem/meme-expanding-brain.jpg)
 
 In my defence, I'm a slightly paranoid developer. I wasn't going to let an agent loose on real work until it had earned that trust, and I wanted the trust to come from guardrails, not good behaviour.
+
+This isn't a post about letting agents run free. Plenty of companies aren't ready for that, often for good reasons: risk, audit, regulation, or a culture that wants a person accountable for every change. There, the realistic model isn't "automate it all". It's developers in the loop: AI does the work, and the developer orchestrates it and signs off at the end. That's what this setup is built for.
+
+> **The short version**
+>
+> - AI does the work; the developer orchestrates it and owns the result.
+> - Rules in a prompt get bent; rules in a script don't.
+> - Approval covers the exact change, so "yes, but tweak this" means a new preview.
+> - Every guard has tests that try to break it.
+> - One skill's whole job is checking the other nine.
+> - No skill is right the first time: each one gets updated after real use.
 
 ## The copy-paste loop
 
@@ -31,7 +44,15 @@ After that I started noticing every instruction I'd given twice. Over the next t
 | PR review | Drafts a review I read before anything is posted: thorough for my own PRs, short and friendly for others' |
 | Skills health | Checks the setup itself: integrity, stale logs, broken references |
 
-It was genuinely useful, and that was the part that worried me. I'd given a confident, fast model write access to things other people read.
+## Skill by skill, never right the first time
+
+I didn't design ten skills up front. I built one, used it until something annoyed me, and fixed what annoyed me. Every major run ends the same way: what worked, what didn't, and what the skill should do differently next time. That goes into the skill or the shared standards straight away, while it's fresh.
+
+I also document what works and what doesn't, so the lessons don't live only in my head. It's why the tenth skill took a fraction of the effort of the first: each new one starts from the same rules, standards and test patterns, plus everything the earlier ones got wrong.
+
+The next skill gets picked by counting, not by ideas. I look at what I actually keep asking the agent for, and the repeats win. Several brilliant-sounding ideas never made the cut.
+
+It was all genuinely useful, and that was the part that worried me. I'd given a confident, fast model write access to things other people read.
 
 ## The problem with polite rules
 
@@ -55,11 +76,13 @@ Here's what happens now when I ask: "Create a user story for this requirement, w
 
 The agent can't talk its way around a hash. That's the whole trick. And there's no delete script at all, because you can't misuse a capability that doesn't exist.
 
-## Who tests the guards?
+## Who checks the checkers?
 
 A guard nobody has tried to break is just another polite rule. So the guards have their own test suite, run against fake folders with every external call stubbed, so a test can never touch anything real. Each test tries to trick a guard: a stale approval code, a file outside the approved plan, a secret hidden in a description.
 
-Two rules came out of this: tests before guards, guards before skills. And never weaken a guard to make a test pass. A health check also fingerprints the guards and skills, and flags anything that changed since I last reviewed it.
+Two rules came out of this: tests before guards, guards before skills. And never weaken a guard to make a test pass.
+
+Skills drift too: a quick edit here, a stale reference there. So one skill's whole job is checking the other nine. It fingerprints the guards, standards and skills, flags anything that changed since I last reviewed it, and catches broken references and stale logs. It's the closest thing the setup has to a code review for itself.
 
 ## Zooming out: the ecosystem
 
@@ -93,14 +116,13 @@ Every skill follows the same contract: load the guardrails, preview before apply
 - **Start read-only.** Reading is where agents are most useful and least dangerous, and it builds the trust you need before letting them write.
 - **Add one guarded write.** Preview, approve the exact version, apply only through a script that checks it. One is enough to learn the pattern.
 - **Write the tests before the guards.** Fake folders, stubbed network calls and a test for every refusal.
-- **Count before you build.** Look at what you actually ask the agent for; the repeats are your next skill. Several of my brilliant-sounding ideas never made the cut.
 - **Expect to pay up front.** Building this took thousands of credits. Running it is cheap, because scripts do the deterministic work, the model only orchestrates, and skills stop me paying to re-explain context.
 
 Two honest caveats. This is a personal setup, not a replacement for security reviews, access policies or anyone whose job is to say no. And guardrails lower risk without removing it: the script makes sure only what I approved lands, but it can't make me approve the right thing.
 
 ## Closing
 
-This isn't the most advanced agent setup out there, and it doesn't need to be. It's what let me hand an agent real work and trust the result, one guarded step at a time. The ambitious stuff can come later; the trust has to come first.
+This isn't the most advanced agent setup out there, and it doesn't need to be. Where every change needs a human owner, the goal isn't full autonomy. It's AI doing more of the work while a developer stays accountable for all of it. The ambitious stuff can come later; the trust has to come first.
 
 ![It ain't much, but it's honest work.](/images/blog/governed-ai-agent-ecosystem/meme-honest-work.jpg)
 

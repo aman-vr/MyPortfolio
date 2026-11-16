@@ -20,10 +20,10 @@
 const posts = [
   {
     slug: "governed-ai-agent-ecosystem",
-    title: "From one chore to a governed AI agent ecosystem",
-    subtitle: "How I stopped trusting prompts and started trusting tests.",
+    title: "If AI is coming for my job, it can start with the parts I hate",
+    subtitle: "I automated one chore and ended up with ten AI skills and an ecosystem to stop them going rogue.",
     description:
-      "How keeping my DevOps board up to date turned into ten Copilot skills, guardrails enforced in code and 100+ tests, and what it taught me about adopting AI agents safely.",
+      "How keeping my DevOps board up to date turned into ten Copilot skills, guardrails enforced in code, a skill that checks the others and 100+ tests, and what it taught me about adopting AI safely.",
     date: "2026-11-15",
     tags: ["Agentic AI", "GitHub Copilot", "MCP", "Guardrails"],
     ogImage: "/images/blog/governed-ai-agent-ecosystem/og.png",

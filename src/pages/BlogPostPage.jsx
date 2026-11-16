@@ -91,7 +91,11 @@ export default function BlogPostPage() {
             prose-headings:text-white prose-headings:font-bold
             prose-a:text-amber-400 prose-a:no-underline hover:prose-a:underline
             prose-strong:text-white prose-th:text-white
-            prose-li:marker:text-amber-400"
+            prose-li:marker:text-amber-400
+            prose-blockquote:not-italic prose-blockquote:font-normal prose-blockquote:text-stone-300
+            prose-blockquote:border-amber-400 prose-blockquote:bg-stone-900/60 prose-blockquote:rounded-r-lg
+            prose-blockquote:px-6 prose-blockquote:py-1
+            [&_blockquote_p]:before:content-none [&_blockquote_p]:after:content-none"
         >
           <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
             {body}
