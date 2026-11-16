@@ -41,7 +41,7 @@ const profile = {
     "Always up for an interesting problem, a good collaboration, or a conversation about software. Say hi.",
   bio: {
     short:
-      "Software engineer with 4+ years building full stack systems on .NET and Azure, with a focus on clean architecture and thoughtful design. Lately I use AI to make that work faster and more consistent, with guardrails I trust. Dual master's degrees in tech and business mean I think about cost and value, not just code.",
+      "Software engineer with 4+ years building full stack systems on .NET and Azure, with a focus on clean architecture and thoughtful design. Lately I use AI to make that work faster and more consistent, with checks I trust. Dual master's degrees in tech and business mean I think about cost and value, not just code.",
     long: [
       "Most of my work has been designing and shipping REST APIs and cloud services on .NET and Azure, focused on systems where cutting corners early costs multiples later. Clean architecture, honest contracts, thorough documentation, and code the next developer can actually pick up and run with.",
       "I hold dual master's degrees in Computer Applications and Business Informatics, meaning I can sit in a commercial conversation and translate it directly into engineering decisions. What it costs, what it enables, whether it's solving the right problem.",
