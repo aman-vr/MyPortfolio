@@ -2,6 +2,7 @@
 // Reads: profile.projects
 
 import { motion } from "framer-motion";
+import { Link } from "react-router";
 import profile from "../data/profile";
 
 const fadeUp = {
@@ -56,6 +57,14 @@ export default function Projects() {
                     >
                       GitHub
                     </a>
+                  )}
+                  {project.writeup && (
+                    <Link
+                      to={project.writeup}
+                      className="text-stone-400 hover:text-white text-sm transition-colors duration-200"
+                    >
+                      Read the write-up
+                    </Link>
                   )}
                   {project.live && (
                     <a

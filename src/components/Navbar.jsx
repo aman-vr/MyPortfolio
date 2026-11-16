@@ -1,5 +1,6 @@
 // Navbar.jsx — Fixed top nav with mobile menu and resume button.
 // Reads: profile.social.github. Resume button auto-shows when /public/AmanVerma-CV.pdf exists.
+// Section links are absolute (/#about) so they also work from a blog post page.
 
 import { useState, useEffect } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
@@ -39,7 +40,7 @@ export default function Navbar() {
           {links.map((link) => (
             <li key={link}>
               <a
-                href={`#${link.toLowerCase()}`}
+                href={`/#${link.toLowerCase()}`}
                 className="text-stone-400 hover:text-white text-sm transition-colors duration-200"
               >
                 {link}
@@ -80,7 +81,7 @@ export default function Navbar() {
           {links.map((link) => (
             <a
               key={link}
-              href={`#${link.toLowerCase()}`}
+              href={`/#${link.toLowerCase()}`}
               onClick={() => setMenuOpen(false)}
               className="text-stone-400 hover:text-white text-sm transition-colors duration-200"
             >

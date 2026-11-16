@@ -4,17 +4,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- description and author are set dynamically from profile.js via App.jsx -->
+  <!-- description and author are set at runtime (useDocumentMeta, App.jsx) -->
   <meta name="description" content="" />
   <meta name="author" content="" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <!-- title is set dynamically from profile.pageTitle via App.jsx -->
+  <!-- title is set at runtime per page by useDocumentMeta -->
   <title></title>
   <!-- og: tags must be updated manually — social crawlers don't run JS -->
   <!-- update og:title and og:description to match profile.pageTitle and profile.metaDescription -->
+  <!-- blog posts get their own og: tags at build time from scripts/og-pages.mjs -->
   <meta property="og:title" content="Aman Verma | Software Engineer" />
   <meta property="og:description"
-    content="Software Engineer with 5+ years of .NET and Azure expertise, based in Auckland, NZ. Building clean, scalable systems and APIs." />
+    content="Software Engineer with 5+ years of .NET and Azure expertise, based in Auckland, NZ. Building clean, scalable systems, with a growing focus on AI." />
   <meta property="og:url" content="%VITE_APP_URL%" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="%VITE_APP_URL%/preview.jpg" />

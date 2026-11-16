@@ -13,13 +13,29 @@ Live: [aman-vr.vercel.app](https://aman-vr.vercel.app)
 - [Tailwind CSS v4](https://tailwindcss.com/) — styling
 - [Framer Motion](https://www.framer.com/motion/) — animations
 - [react-icons](https://react-icons.github.io/react-icons/) — icons
+- [React Router](https://reactrouter.com/) — routing for blog posts
+- [react-markdown](https://github.com/remarkjs/react-markdown) + [Tailwind Typography](https://github.com/tailwindlabs/tailwindcss-typography) — post rendering
 
 ## Project Structure
 
 ```
+scripts/
+└── og-pages.mjs         # Post-build: per-post HTML with Open Graph tags for link previews
+public/
+└── images/blog/<slug>/  # Post diagrams and the 1200x630 OG image
 src/
 ├── data/
-│   └── profile.js       # All personal content lives here
+│   ├── profile.js       # All personal content lives here
+│   └── posts.js         # Blog post metadata (title, date, tags, OG image)
+├── content/
+│   ├── posts.js         # Loads post bodies
+│   └── posts/<slug>.md  # Blog post bodies in Markdown
+├── hooks/
+│   └── useDocumentMeta.js
+├── pages/
+│   ├── HomePage.jsx     # The single-page portfolio
+│   ├── BlogPostPage.jsx # /blog/:slug
+│   └── NotFoundPage.jsx
 ├── components/
 │   ├── Navbar.jsx
 │   ├── Hero.jsx
@@ -57,6 +73,16 @@ npm run dev
 npm run build
 ```
 
+## Writing a Blog Post
+
+1. Add the body as `src/content/posts/<slug>.md` (no H1; the title comes from metadata)
+2. Add an entry at the top of `src/data/posts.js` with the same `slug`
+3. Put diagrams and a 1200x630 `og.png` in `public/images/blog/<slug>/`
+4. `npm run build` also writes `dist/blog/<slug>.html` with the post's Open Graph tags, so LinkedIn and other crawlers (which don't run JavaScript) show the right preview
+5. After deploying, check the preview with [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/)
+
+`vercel.json` serves those generated pages through `cleanUrls` and falls back to the SPA for every other route.
+
 ## Deployment
 
 Deployed on [Vercel](https://vercel.com). Every push to `main` triggers an automatic deployment.
@@ -70,5 +96,5 @@ Deployed on [Vercel](https://vercel.com). Every push to `main` triggers an autom
 | Skills            | Certifications, tech stack, publications             |
 | Experience        | Work history timeline                                |
 | Projects          | Featured projects with tech tags and links           |
-| Blog              | Writing placeholder                                  |
+| Blog              | Post cards linking to /blog/:slug                    |
 | Contact           | Email CTA, social links                              |
