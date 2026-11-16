@@ -78,7 +78,7 @@ export default function BlogPostPage() {
 
         <header className="mt-8 mb-12 pb-10 border-b border-stone-800">
           <p className="text-amber-400 text-sm font-mono mb-4 tracking-wider">
-            {formatPostDate(post.date)}
+            {profile.name} · {formatPostDate(post.date)}
           </p>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-5">
             {post.title}
@@ -91,7 +91,11 @@ export default function BlogPostPage() {
             prose-headings:text-white prose-headings:font-bold
             prose-a:text-amber-400 prose-a:no-underline hover:prose-a:underline
             prose-strong:text-white prose-th:text-white
-            prose-li:marker:text-amber-400"
+            prose-li:marker:text-amber-400
+            prose-blockquote:not-italic prose-blockquote:font-normal prose-blockquote:text-stone-300
+            prose-blockquote:border-amber-400 prose-blockquote:bg-stone-900/60 prose-blockquote:rounded-r-lg
+            prose-blockquote:px-6 prose-blockquote:py-1
+            [&_blockquote_p]:before:content-none [&_blockquote_p]:after:content-none"
         >
           <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
             {body}
@@ -106,7 +110,7 @@ export default function BlogPostPage() {
             &larr; Back to all writing
           </Link>
           <a
-            href={profile.social.linkedin}
+            href={post.discussUrl ?? profile.social.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm px-4 py-2 border border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-stone-950 rounded transition-all duration-200"
